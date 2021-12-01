@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MatchSource from './matchSource';
 
+MatchSource.getMatchDetails(2000).then(data => 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App  matches = {data}/>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'))
 );
 
 // If you want to start measuring performance in your app, pass a function
