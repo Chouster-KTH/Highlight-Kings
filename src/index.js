@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import MatchSource from './matchSource';
+//import MatchSource from './matchSource';
+import HighlightSource from './highlightSource';
 
-MatchSource.getMatchDetails(2000).then(data => 
+HighlightSource.getHighlight().then(data => 
 ReactDOM.render(
   <React.StrictMode>
-    <App  matches = {data}/>
+    <App  highlights = {data}/>
   </React.StrictMode>,
   document.getElementById('root'))
 );
