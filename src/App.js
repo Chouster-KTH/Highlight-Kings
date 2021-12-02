@@ -8,17 +8,20 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Highlight Kings {hlArray[1].title}</h1>
+        <h1>Highlight Kings</h1>
+        {hlArray.map(highLight => (
         <div className="highlights">
-          <a href={hlArray[0].matchviewUrl} target="_blank" rel="noreferrer">
-            <img src={hlArray[0].thumbnail} 
+          <p>{highLight.title}</p>    
+          <a href={highLight.matchviewUrl} target="_blank" rel="noreferrer">
+            <img src={highLight.thumbnail} 
             alt="highlight"
             height='150'
             width='150'/>
             </a><br/>
-            <p>{hlArray[0].title}</p>
-            
         </div>
+        )
+        )}
+        
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.g
