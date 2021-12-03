@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-//import MatchSource from './matchSource';
-import HighlightSource from './highlightSource';
+//import MatchSource from './js/apiSource/matchSource';
+import HighlightSource from './js/apiSource/highlightSource.js';
 
 HighlightSource.getHighlight().then(data => 
 ReactDOM.render(
