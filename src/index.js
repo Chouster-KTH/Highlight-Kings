@@ -5,11 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //import MatchSource from './js/apiSource/matchSource';
 import HighlightSource from './js/apiSource/highlightSource.js';
+import SideBar from './js/sidebarView';
+import LatestHighlights from './js/latestHighlightsView'
 
 HighlightSource.getHighlight().then(data => 
 ReactDOM.render(
   <React.StrictMode>
-    <App  highlights = {data}/>
+    <div className = "flexparent">
+    <SideBar/>
+    <LatestHighlights highlights = {data}/>
+    </div>
   </React.StrictMode>,
   document.getElementById('root'))
 );
