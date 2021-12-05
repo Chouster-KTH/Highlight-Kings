@@ -4,17 +4,18 @@ import './index.css';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MatchSource from './js/apiSource/matchSource';
-//import HighlightSource from './js/apiSource/highlightSource.js';
+import HighlightSource from './js/apiSource/highlightSource.js';
 import SideBar from './js/sidebarView';
 import LatestHighlights from './js/latestHighlightsView'
 import CompetitionSummary from './js/competitionSummaryView'
+import HomePage from './js/homePageView'
 
-MatchSource.getStandings(2019).then(data => 
+HighlightSource.getHighlight().then(data => 
 ReactDOM.render(
   <React.StrictMode>
     <div className = "flexparent">
     <SideBar/>
-    <CompetitionSummary stands= {data}/>
+    <LatestHighlights highlights = {data}/>
     </div>
   </React.StrictMode>,
   document.getElementById('root'))

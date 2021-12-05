@@ -1,6 +1,5 @@
 .latestHighlights{
     padding-left: 165px;
-    background-color: pink;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -8,6 +7,7 @@
 }
 
 .latestHighlights-header{
+    background-color: whitesmoke;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -16,12 +16,12 @@
 
 .highlights-grid{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .highlight-header{
-    font-family: Roboto;
-    font-style: normal;
+    font-family: Arial;
+    font-style:normal;
     font-weight: normal;
     text-align: center; 
 }

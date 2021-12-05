@@ -1,0 +1,36 @@
+.homePage {
+    padding-left: 165px;
+    background-color:white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center; 
+}
+
+.homePage-header {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+}
+
+.homePage-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+}
+
+.homePage-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.homePage-content > div {
+    background-color: lightskyblue;
+    padding: 1rem;
+    width: 200px;
+    height: 150px;
+
+}
