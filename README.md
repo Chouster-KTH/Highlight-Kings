@@ -1,3 +1,39 @@
+# Mid-project review
+## [Highlight Kings on herokuapp](https://highlightkings.herokuapp.com/)
+**1. Description:** Highlight Kings is a football application which targets football lovers who want an easy and interactive way to enjoy football highlights. The application is simply a web page where users can enjoy football highlights. What makes the application special is that highlights can be upvoted/downvoted by the users. Users can watch highlights from several countries and leagues and rank them using the up/down-vote. The most upvoted highlights are saved in a leaderboard which the user can watch the highlights from, hence, the users can see if they agree or not with other users. In addition to the leaderboard, one can also choose to watch recent highlights. On the sidebar, information about upcoming/played matches are kept updated, in which the user can specify leagues, cups and matches to show. The user can also navigate by clicking on the matches in the sidebar to find video highlights from them (if they exist).
+
+**2. What we have done:** Much emphasis has been put towards ensuring that the two apis that we are using works as intended and that we can use the data received. To show that they work and test the data, views has been created. One that shows the latest highlights and one which shows the most recent finished matches in Serie A. In addition to this, a home page has been added but the views are still to be updated to include more functionality and data. Routers has also been implemented to allow navigation between the different pages in the application.
+
+**3. What we still plan to do:**
+
+*The upvote/downvote function
+
+*The presenters with state hooks
+
+*Some minor features such as "About us" and "Standings" are still not finished 
+
+*Interconnect components to the model
+
+*Fix the CSS to make the site more stylish
+ 
+**4. Your project file structure (short description/purpose of each file):**
+
+*The home page is supposed to show the most upvoted highlights that have been uploaded
+
+*Sidebarview is a meny that shows all the functions on the website
+
+*The competition page is supposed to sort highlights based on country or tournament
+
+*Latest highlights view is supposed to show the latest highlights regardless of competition
+
+*About us will contain a short description of the project and the contributors
+
+
+![home](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/home.png)
+![competitions](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/competitions.png)
+![about](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/about.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
