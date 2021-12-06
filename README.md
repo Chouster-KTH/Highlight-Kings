@@ -8,7 +8,7 @@
 
 * The upvote/downvote function
 
-*Combine data from both API's, so that a user can find a highlight for a certain match 
+* Combine data from both API's, so that a user can find a highlight for a certain match 
 
 * The presenters with state hooks
 
