@@ -6,27 +6,27 @@
 
 **3. What we still plan to do:**
 
-*The upvote/downvote function
+* The upvote/downvote function
 
-*The presenters with state hooks
+* The presenters with state hooks
 
-*Some minor features such as "About us" and "Standings" are still not finished 
+* Some minor features such as "About us" and "Standings" are still not finished 
 
-*Interconnect components to the model
+* Interconnect components to the model
 
-*Fix the CSS to make the site more stylish
+* Fix the CSS to make the site more stylish
  
 **4. Your project file structure (short description/purpose of each file):**
 
-*The home page is supposed to show the most upvoted highlights that have been uploaded
+* The home page is supposed to show the most upvoted highlights that have been uploaded
 
-*Sidebarview is a meny that shows all the functions on the website
+* Sidebarview is a meny that shows all the functions on the website
 
-*The competition page is supposed to sort highlights based on country or tournament
+* The competition page is supposed to sort highlights based on country or tournament
 
-*Latest highlights view is supposed to show the latest highlights regardless of competition
+* Latest highlights view is supposed to show the latest highlights regardless of competition
 
-*About us will contain a short description of the project and the contributors
+* About us will contain a short description of the project and the contributors
 
 
 ![home](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/home.png)
