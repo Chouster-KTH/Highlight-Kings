@@ -1,12 +1,7 @@
 # Mid-project review
-
-Description
-Highlight Kings is a football application which targets football lovers who want an easy and interactive way to enjoy football highlights. The application is simply a web page where users can enjoy football highlights. What makes the application special is that highlights can be upvoted/downvoted by the users. Users can watch highlights from several countries and leagues and rank them using the up/down-vote. The most upvoted highlights are saved in a leaderboard which the user can watch the highlights from, hence, the users can see if they agree or not with other users. In addition to the leaderboard, one can also choose to watch recent highlights. On the sidebar, information about upcoming/played matches are kept updated, in which the user can specify leagues, cups and matches to show. The user can also navigate by clicking on the matches in the sidebar to find video highlights from them (if they exist).
-
-
-!(./src/images/home.png)
-!(./src/images/competitions.png)
-!(./src/images/about.png)
+![home](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/home.png)
+![competitions](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/competitions.png)
+![about](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/about.png)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
