@@ -1,16 +1,16 @@
 import '../css/sidebar.css';
-
+import {Link} from 'react-router-dom';
 
 function SideBar(){
   return(
 <div className = "sideBar">
 
   <div id = "sideTop">
-  <a href="#home">Home</a>
-  <a href="#competitions">Competitions</a>
-  <a href="#standings">Standings</a>
-  <a href="#latest games">Latest games</a>
-  <a href="#upcoming games">Upcoming games</a>
+  <Link className = "sideLink" to="home">Home</Link>
+  <Link className ="sideLink" to="/">Highlights</Link>
+  <a href="/standings">Standings</a>
+  <a href="/latest games">Latest games</a>
+  <a href="/upcoming games">Upcoming games</a>
   </div>
 
   <div className = "sideFooter">

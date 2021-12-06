@@ -1,22 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import MatchSource from './js/apiSource/matchSource';
+//import MatchSource from './js/apiSource/matchSource';
 import HighlightSource from './js/apiSource/highlightSource.js';
 import SideBar from './js/sidebarView';
-import LatestHighlights from './js/latestHighlightsView'
-import CompetitionSummary from './js/competitionSummaryView'
-import HomePage from './js/homePageView'
+//import LatestHighlights from './js/latestHighlightsView'
+//import CompetitionSummary from './js/competitionSummaryView'
+//import HomePage from './js/homePageView'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 HighlightSource.getHighlight().then(data => 
 ReactDOM.render(
   <React.StrictMode>
-    <div className = "flexparent">
+    <BrowserRouter>
     <SideBar/>
-    <LatestHighlights highlights = {data}/>
-    </div>
+      <Routes>
+        <Route path="/" element={ <App highlights ={data} /> }>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'))
 );
