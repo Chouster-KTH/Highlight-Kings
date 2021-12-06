@@ -1,7 +1,7 @@
 # Mid-project review
-!(/src/images/home.png)
-!(/src/images/competitions.png)
-!(/src/images/about.png)
+!(./src/images/home.png)
+!(./src/images/competitions.png)
+!(./src/images/about.png)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
