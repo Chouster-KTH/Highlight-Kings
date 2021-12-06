@@ -9,6 +9,20 @@
 ![about](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/about.png)
 # Getting Started with Create React App
 
+What we still plan to do:
+The upvote/downvote function
+The presenters with state hooks
+Some minor features such as "About us" and "Standings" are still not finished 
+Interconnect components to the model
+Fix the CSS to make the site more stylish
+ 
+Your project file structure (short description/purpose of each file):
+The home page is supposed to show the most upvoted highlights that have been uploaded
+Sidebarview is a meny that shows all the functions on the website
+The competition page is supposed to sort highlights based on country or tournament
+Latest highlights view is supposed to show the latest highlights regardless of competition
+About us will contain a short description of the project and the contributors
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
