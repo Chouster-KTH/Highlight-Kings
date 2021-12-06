@@ -8,13 +8,13 @@ function SideBar(){
   <div id = "sideTop">
   <Link className = "sideLink" to="/home">Home</Link>
   <Link className ="sideLink" to="/highlights">Highlights</Link>
-  <a href="/standings">Standings</a>
-  <a href="/latest games">Latest games</a>
-  <a href="/upcoming games">Upcoming games</a>
+  <Link className ="sideLink" to="/matches">Test Matches</Link>
+  <a href="/latest games">Coming soon</a>
+  <a href="/upcoming games">Coming soon</a>
   </div>
 
   <div className = "sideFooter">
-  <a href="#about us">About us</a>
+  <a href="#about us">Coming soon</a>
   <a href="#my account">My account</a>
   <a href="#sign in">Sign in</a>
   <div id = "sideText">

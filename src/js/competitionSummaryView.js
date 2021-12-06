@@ -1,15 +1,14 @@
 import '../css/compSum.css';
 
 function CompetitionSummary(props){
-  var allMatches = props.stands.matches;
-  console.log(props);
+  var allMatches = props.match.matches;
   
 
   return(<div className="compSummary">
   <table>
   <thead>
     <tr>
-    <th>{props.stands.competition.name}</th>
+    <th>{props.match.competition.name}</th>
     </tr>
     <tr id="tDates">
     <td>Start: {allMatches[0].season.startDate} &nbsp;&nbsp; End: {allMatches[0].season.endDate}</td>

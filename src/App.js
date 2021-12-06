@@ -3,6 +3,7 @@ import LatestHighlights from './js/latestHighlightsView';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import HomePage from './js/homePageView';
 import SideBar from './js/sidebarView';
+import CompetitionSummary from './js/competitionSummaryView';
 
 function App(props) {
   return (
@@ -10,9 +11,10 @@ function App(props) {
      <div className = "flexParent">
     <SideBar/>
     <Routes> 
-    <Route path="/home" element={<HomePage />} ></Route>
-    <Route path="/" element={<HomePage />}  ></Route>
-    <Route path="/highlights" element={<LatestHighlights highlights={props.highlights}/>} ></Route>
+    <Route path="/home" element={<HomePage />}/>
+    <Route path="/" element={<HomePage />}/>
+    <Route path="/highlights" element={<LatestHighlights highlights={props.highlights}/>}/>
+    <Route path="/matches" element={<CompetitionSummary match={props.match}/>} ></Route>
   </Routes>
   </div>
   </BrowserRouter>
