@@ -9,12 +9,13 @@ import SideBar from './js/sidebarView';
 //import LatestHighlights from './js/latestHighlightsView'
 //import CompetitionSummary from './js/competitionSummaryView'
 //import HomePage from './js/homePageView'
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import MatchSource from './js/apiSource/matchSource';
 
-HighlightSource.getHighlight().then(data => 
+Promise.all([HighlightSource.getHighlight(), 
+            MatchSource.getStandings(2019)]).then((dt) => 
 ReactDOM.render(
   <React.StrictMode>
-    <App highlights ={data} />
+    <App highlights ={dt[0]} match = {dt[1]} />
   </React.StrictMode>,
   document.getElementById('root'))
 );
