@@ -10,6 +10,8 @@
 
 * Combine data from both API's, so that a user can find a highlight for a certain match 
 
+* Views that allow the user to search for certain competitions and see live data from matches being played
+
 * The presenters with state hooks
 
 * Some minor features such as "About us" and "Standings" are still not finished 
