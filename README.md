@@ -5,17 +5,27 @@
 2. What we have done: Much emphasis has been put towards ensuring that the two apis that we are using works as intended and that we can use the data received. To show that they work and test the data, views has been created. One that shows the latest highlights and one which shows the most recent finished matches in Serie A. In addition to this, a home page has been added but the views are still to be updated to include more functionality and data. Routers has also been implemented to allow navigation between the different pages in the application.
 
 3. What we still plan to do:
+
 The upvote/downvote function
+
 The presenters with state hooks
+
 Some minor features such as "About us" and "Standings" are still not finished 
+
 Interconnect components to the model
+
 Fix the CSS to make the site more stylish
  
 4. Your project file structure (short description/purpose of each file):
+
 The home page is supposed to show the most upvoted highlights that have been uploaded
+
 Sidebarview is a meny that shows all the functions on the website
+
 The competition page is supposed to sort highlights based on country or tournament
+
 Latest highlights view is supposed to show the latest highlights regardless of competition
+
 About us will contain a short description of the project and the contributors
 
 
