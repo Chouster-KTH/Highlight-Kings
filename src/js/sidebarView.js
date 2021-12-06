@@ -6,8 +6,8 @@ function SideBar(){
 <div className = "sideBar">
 
   <div id = "sideTop">
-  <Link className = "sideLink" to="home">Home</Link>
-  <Link className ="sideLink" to="/">Highlights</Link>
+  <Link className = "sideLink" to="/home">Home</Link>
+  <Link className ="sideLink" to="/highlights">Highlights</Link>
   <a href="/standings">Standings</a>
   <a href="/latest games">Latest games</a>
   <a href="/upcoming games">Upcoming games</a>

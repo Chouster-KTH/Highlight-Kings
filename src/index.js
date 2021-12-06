@@ -14,13 +14,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 HighlightSource.getHighlight().then(data => 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <SideBar/>
-      <Routes>
-        <Route path="/" element={ <App highlights ={data} /> }>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <App highlights ={data} />
   </React.StrictMode>,
   document.getElementById('root'))
 );
