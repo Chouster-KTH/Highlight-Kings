@@ -16,6 +16,8 @@
 
 * Interconnect components to the model
 
+* Add (if time allows) login features to give more user control of the website
+
 * Fix the CSS to make the site more stylish
  
 **4. Your project file structure (short description/purpose of each file):**
