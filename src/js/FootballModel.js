@@ -1,9 +1,9 @@
 import HighlightSource from "./apiSource/highlightSource";
 class FootballModel{
-    constructor(){
-        this.highlights = [];
-        this.upVoted = [];
-        this.popular = [];
+    constructor(highlights = [], upVoted = [], popular = []){
+        this.highlights = highlights;
+        this.upVoted = upVoted;
+        this.popular = popular;
         this.addHighlights();
     }
     addHighlights(){
