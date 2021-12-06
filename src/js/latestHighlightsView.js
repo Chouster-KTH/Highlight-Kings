@@ -7,8 +7,8 @@ function LatestHighlights(props){
         <h1 className="latestHighlights-header">
             Latest Highlights</h1>
         <div className = "highlights-grid">
-        {hlArray.map(highLight => (
-        <div className="highlights">
+        {hlArray.map((highLight, index) => (
+        <div className="highlights" key={index}>
           <p className = "highlight-header">{highLight.title}</p>    
           <a href={highLight.matchviewUrl} target="_blank" rel="noreferrer">
             <img src={highLight.thumbnail} 
