@@ -1,7 +1,7 @@
 # Mid-project review
-!(https://www.figma.com/file/UDZefZnpmTwvuCtVq6QCoj/Daniels-test?node-id=7%3A17)
-!(https://www.figma.com/file/UDZefZnpmTwvuCtVq6QCoj/Daniels-test?node-id=53%3A154)
-!(https://www.figma.com/file/UDZefZnpmTwvuCtVq6QCoj/Daniels-test?node-id=53%3A313)
+!(/src/images/home.png)
+!(/src/images/competitions.png)
+!(/src/images/about.png)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
