@@ -14,7 +14,7 @@ function SideBar(){
   </div>
 
   <div className = "sideFooter">
-  <a href="#about us">Coming soon</a>
+  <Link className ="sideLink" to="/aboutUs">About us</Link>
   <a href="#my account">My account</a>
   <a href="#sign in">Sign in</a>
   <div id = "sideText">
@@ -27,3 +27,5 @@ function SideBar(){
   );
 }
 export default SideBar;
+
+//<a href="#about us">About us</a>
