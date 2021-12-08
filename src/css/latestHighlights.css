@@ -32,3 +32,8 @@
     margin: 20px;
     display: grid;
 }
+
+.votingButtons
+{
+    text-align: right;
+}
