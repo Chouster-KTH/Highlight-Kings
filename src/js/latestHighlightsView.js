@@ -5,7 +5,8 @@ import downvoteButton from '../images/downvoteButton.png';
 
 
 function LatestHighlights(props) {
-    const hlArray = props.highlights.response;
+    const hlArrayFull = props.highlights.response;
+    const hlArray = hlArrayFull.slice(0,20);
     return (
         <div className="latestHighlights">
             <h1 className="latestHighlights-header">
@@ -18,12 +19,9 @@ function LatestHighlights(props) {
                             <img src={upvoteButton} onClick={event => console.log("User upvoted game: " + highLight.title)} width="25" height="25" />
                             <img src={downvoteButton} onClick={event => console.log("User downvoted game: " + highLight.title)} width="25" height="25" />
                         </div>
-                        <a href={highLight.matchviewUrl} target="_blank" rel="noreferrer">
-                            <img src={highLight.thumbnail}
-                                alt="highlight"
-                                height='150'
-                                width='200' />
-                        </a>
+                        <div className="iframeContainer">
+                            <iframe src={highLight.videos[0].embed.substring(90,185)} frameBorder="0" width="100%" height="100%" allowFullScreen="" allow="autoplay; fullscreen"></iframe>
+                        </div>
                         <br />
                     </div>
                 ))}
