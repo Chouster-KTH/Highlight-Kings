@@ -41,6 +41,8 @@
     height: 60vh;
     grid-area: left;
     text-align: right;
+    width: 25px;
+    padding-left: 80%;
 }
 
 .iframeContainer{
@@ -53,3 +55,4 @@
     height: 100%;
     /*float: left;*/
 }
+
