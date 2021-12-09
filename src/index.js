@@ -5,17 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //import MatchSource from './js/apiSource/matchSource';
 import HighlightSource from './js/apiSource/highlightSource.js';
-import SideBar from './js/sidebarView';
+//import SideBar from './js/sidebarView';
 //import LatestHighlights from './js/latestHighlightsView'
 //import CompetitionSummary from './js/competitionSummaryView'
 //import HomePage from './js/homePageView'
 import MatchSource from './js/apiSource/matchSource';
 
 Promise.all([HighlightSource.getHighlight(), 
-            MatchSource.getStandings(2019)]).then((dt) => 
+            MatchSource.getAllCompetitions()]).then((dt) => 
 ReactDOM.render(
   <React.StrictMode>
-    <App highlights ={dt[0]} match = {dt[1]} />
+    <App highlights ={dt[0]} comps = {dt[1]} />
   </React.StrictMode>,
   document.getElementById('root'))
 );
