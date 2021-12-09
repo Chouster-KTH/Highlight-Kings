@@ -5,6 +5,7 @@ function CompetitionSummary(props){
   
 
   return(<div className="compSummary">
+
   <table>
   <thead>
     <tr>

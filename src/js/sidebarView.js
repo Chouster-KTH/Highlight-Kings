@@ -6,15 +6,15 @@ function SideBar(){
 <div className = "sideBar">
 
   <div id = "sideTop">
-  <Link className = "sideLink" to="/home">Home</Link>
-  <Link className ="sideLink" to="/highlights">Highlights</Link>
-  <Link className ="sideLink" to="/matches">Test Matches</Link>
+  <Link  to="/home">Home</Link>
+  <Link  to="/highlights">Highlights</Link>
+  <Link  to="/competitions">Competitions</Link>
   <a href="/latest games">Coming soon</a>
   <a href="/upcoming games">Coming soon</a>
   </div>
 
   <div className = "sideFooter">
-  <Link className ="sideLink" to="/aboutUs">About us</Link>
+  <Link to="/aboutUs">About us</Link>
   <a href="#my account">My account</a>
   <a href="#sign in">Sign in</a>
   <div id = "sideText">
