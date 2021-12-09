@@ -1,6 +1,4 @@
 import '../css/latestHighlights.css'
-import upvoteButton from '../images/upvoteButton.png';
-import downvoteButton from '../images/downvoteButton.png';
 
 import upvote from '../images/upvote.png';
 import downvote from '../images/downvote.png';
