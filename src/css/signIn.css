@@ -1,4 +1,4 @@
-.signUp-header
+.signIn-header
 {
     text-align: center;
     font-size: medium;
@@ -6,18 +6,18 @@
 
 }
 
-.b
+.bb
 {
  padding-right: 20%;
  padding-left: 20% ;
 }
 
-.a
+.aa
 {
     text-align: center;
 }
 
-.p
+.pp
 {
     text-align: center;
 }

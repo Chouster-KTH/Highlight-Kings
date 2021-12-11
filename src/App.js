@@ -6,7 +6,15 @@ import SideBar from './js/sidebarView';
 import Competitions from './js/competitionView';
 import AboutUs from './js/aboutUsView';
 import CompetitionSummary from './js/competitionSummaryView';
-import SignUp from './js/signUpView';
+//import SignIn from './js/signInView';
+//import SignUp from './js/signUpView';
+import SignInPresenter from './js/presenters/signInPresenter';
+import SignUpPresenter from './js/presenters/signUpPresenter';
+import MyAccount from './js/myAccountView';
+
+
+
+
 
 
 function App(props) {
@@ -21,7 +29,10 @@ function App(props) {
           <Route path="/competitions" element={<Competitions comps={props.comps} />} ></Route>
           <Route path="/aboutUs" element={<AboutUs />}> </Route>
           <Route path="/competitions" element={<CompetitionSummary />}> </Route>
-          <Route path="/signUp" element={<SignUp />}> </Route>
+          <Route path="/myAccount" element={<MyAccount model = {props.model}/>}> </Route>
+          <Route path="/signIn" element={<SignInPresenter model = {props.model}/>}> </Route>
+          <Route path="/signUp" element={<SignUpPresenter model = {props.model}/>}> </Route>
+      
 
         </Routes>
       </div>

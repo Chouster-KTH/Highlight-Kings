@@ -5,6 +5,7 @@ class FootballModel{
         this.upVoted = upVoted;
         this.popular = popular;
         this.addHighlights();
+        this.user = null;
     }
     addHighlights(){
         HighlightSource.getHighlight().then(data => {this.highlights = data; console.log(data);});
@@ -17,6 +18,8 @@ class FootballModel{
     removeDownVote(id){}
     addToPopular(id){}
     removeFromPopular(id){}
+    addUser(email, password){console.log("New user registered: email = " + email + " password: " + password)}
+    logInUser(email, password){console.log("User signed in: email = " + email + " password: " + password)}
 
 }
 export default FootballModel;

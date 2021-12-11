@@ -10,12 +10,13 @@ import HighlightSource from './js/apiSource/highlightSource.js';
 //import CompetitionSummary from './js/competitionSummaryView'
 //import HomePage from './js/homePageView'
 import MatchSource from './js/apiSource/matchSource';
-
+import FootballModel from './js/FootballModel';
+const footballModel = new FootballModel();
 Promise.all([HighlightSource.getHighlight(), 
             MatchSource.getAllCompetitions()]).then((dt) => 
 ReactDOM.render(
   <React.StrictMode>
-    <App highlights ={dt[0]} comps = {dt[1]} />
+    <App highlights ={dt[0]} comps = {dt[1]} model = {footballModel} />   
   </React.StrictMode>,
   document.getElementById('root'))
 );

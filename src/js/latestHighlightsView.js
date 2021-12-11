@@ -19,8 +19,8 @@ function LatestHighlights(props) {
                     <div className="highlights" key={index}>
                         <p className="highlight-header">{highLight.title}</p>
                         <div className="votingButtons">
-                            <img src={upvote} onClick={event => console.log("User upvoted game: " + highLight.title)} width="25" height="25" />
-                            <img src={downvote} onClick={event => console.log("User downvoted game: " + highLight.title)} width="25" height="25" />
+                            <img src={upvote} alt = "up" onClick={event => console.log("User upvoted game: " + highLight.title)} width="25" height="25" />
+                            <img src={downvote} alt = "down" onClick={event => console.log("User downvoted game: " + highLight.title)} width="25" height="25" />
                         </div>
                         <div className="iframeContainer">
                             <iframe src={highLight.videos[0].embed.substring(90, 185)} frameBorder="0" width="100%" height="100%" allowFullScreen="" allow="autoplay; fullscreen"></iframe>
@@ -35,3 +35,22 @@ function LatestHighlights(props) {
 
 export default LatestHighlights;
 
+/*
+
+<div className="votingButtons">
+                            <img src={upvoteButton} onClick={event => console.log("User upvoted game: " + highLight.title)} width="25" height="25" />
+                            <img src={downvoteButton} onClick={event => console.log("User downvoted game: " + highLight.title)} width="25" height="25" />
+                        </div>
+
+*/
+
+
+
+/*
+
+<div className="votingButtons">
+                            <div id="upvote"></div><br />
+                            <div id="downvote"></div>
+                        </div>
+
+*/

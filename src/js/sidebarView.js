@@ -15,11 +15,10 @@ function SideBar() {
 
       <div className="sideFooter">
         <Link to="/aboutUs">About us</Link>
-        <a href="#my account">My account</a>
-        <a href="#sign in">Sign in</a>
+        <Link to="/myAccount">My account</Link>
+        <Link to="/signIn">Sign in</Link>
         <div id="sideText">
-          Don't have an account?
-          <Link to="/signUp">Sign up for free</Link>
+          <Link to="/signUp">Don't have an account? <br /> Sign up for free</Link>
         </div>
       </div>
 
