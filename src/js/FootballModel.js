@@ -40,7 +40,11 @@ class FootballModel{
 
 
 
-    addUpVote(id){}
+    addUpVote(prop){
+      this.upVoted = [...this.upVoted, prop];
+      console.log(this.upVoted);
+      return this.upVoted;
+    }
     removeUpVote(id){}
     addDownVote(id){}
     removeDownVote(id){}

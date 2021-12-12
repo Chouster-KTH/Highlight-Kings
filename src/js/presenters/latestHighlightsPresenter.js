@@ -5,6 +5,7 @@ import LatestHighlights from '../latestHighlightsView';
 
 function LatestHighlightsPresenter(props){
   const [hLight, setHLight] = useState(null);
+  const [upvoted, addUpvoted] = useState(props.model.upvoted)
 
   useEffect(()=>{
     async function getHLight(){
@@ -15,10 +16,8 @@ function LatestHighlightsPresenter(props){
   }, [])
   
 
-  return (<React.Fragment>
-    {hLight && <LatestHighlights 
-    highlights={hLight} />}
-    </React.Fragment>);
+  return <React.Fragment>{hLight && <LatestHighlights highlights = {hLight}
+  addUpvoted = {upvoted => props.model.addUpVote(upvoted)}/>}</React.Fragment>
 }
 
 export default LatestHighlightsPresenter;

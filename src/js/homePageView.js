@@ -14,9 +14,16 @@ return (
             <br></br>
             On this page, most upvoted highlights can be seen (under construction).
         </h2>
-        <div className = "homePage-content">
-            <div>Highlight</div><div>Highlight</div><div>Highlight</div><div>Highlight</div><div>Highlight</div>
-            <div>Highlight</div><div>Highlight</div><div>Highlight</div><div>Highlight</div><div>Highlight</div>
+        <div className="upvoted-grid">
+                {props.model.upVoted.map((highLight, index) => (
+                    <div className="upvoted" key={index}>
+                        <p className="upvoted-header">{highLight.title}</p>
+                        <div className="iframeContainerUpVoted">
+                            <iframe src={highLight.videos[0].embed.substring(90, 185)} frameBorder="0" width="100%" height="100%" allowFullScreen="" allow="autoplay; fullscreen"></iframe>
+                        </div>
+                        <br />
+                    </div>
+                ))}
         </div>
     </div>
 );
