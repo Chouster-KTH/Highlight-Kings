@@ -1,12 +1,13 @@
 import HighlightSource from "./apiSource/highlightSource";
 import MatchSource from "./apiSource/matchSource";
 class FootballModel{
-    constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null){
+    constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, user = null){
         this.highlights = highlights;
         this.upVoted = upVoted;
         this.popular = popular;
         this.currentComp = currentComp;
         this.observers = observers;
+        this.user = user;
         this.addDataFromAPIs();
     }
 
@@ -52,6 +53,9 @@ class FootballModel{
     removeDownVote(id){}
     addToPopular(id){}
     removeFromPopular(id){}
+
+    addUser(email, password){console.log("New user registered: email = " + email + " password: " + password)}
+    logInUser(email, password){console.log("User signed in: email = " + email + " password: " + password)}
 
 }
 export default FootballModel;
