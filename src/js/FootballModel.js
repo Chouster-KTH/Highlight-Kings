@@ -7,10 +7,12 @@ class FootballModel{
         this.popular = popular;
         this.currentComp = currentComp;
         this.observers = observers;
-        this.addHighlights();
+        this.addDataFromAPIs();
     }
-    addHighlights(){
-        HighlightSource.getHighlight().then(data => {this.highlights = data;});
+
+    addDataFromAPIs(){
+        Promise.all([HighlightSource.getHighlight(), 
+            MatchSource.getAllCompetitions()]).then((dt) => {this.highlights = dt[0]; this.matchData = dt[1]})  
     }
 
     selectCompetition(compID){
