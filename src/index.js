@@ -5,18 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //import MatchSource from './js/apiSource/matchSource';
 import HighlightSource from './js/apiSource/highlightSource.js';
-//import SideBar from './js/sidebarView';
 //import LatestHighlights from './js/latestHighlightsView'
-//import CompetitionSummary from './js/competitionSummaryView'
-//import HomePage from './js/homePageView'
-import MatchSource from './js/apiSource/matchSource';
 import FootballModel from './js/FootballModel';
 const footballModel = new FootballModel();
-Promise.all([HighlightSource.getHighlight(), 
-            MatchSource.getAllCompetitions()]).then((dt) => 
+HighlightSource.getHighlight().then((dt) => 
 ReactDOM.render(
   <React.StrictMode>
-    <App highlights ={dt[0]} comps = {dt[1]} model = {footballModel} />   
+    <App highlights ={dt} model = {footballModel} />   
   </React.StrictMode>,
   document.getElementById('root'))
 );

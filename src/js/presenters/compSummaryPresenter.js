@@ -1,14 +1,26 @@
-import MatchSource from "../apiSource/matchSource";
+import React, { useState, useEffect } from 'react';
+import MatchSource from '../apiSource/matchSource';
 import CompetitionSummary from "../competitionSummaryView";
-import ReactDOM from 'react-dom';
-import SideBar from "../sidebarView";
 
-function CompSumPresenter(id){
+function CompSumPresenter(props){
 
-MatchSource.getStandings(id).then(dt=>ReactDOM.render(
-      <CompetitionSummary match ={dt}/>
-        ,
-    document.getElementById('root'))
-  );
+  const [currentID, setCurrentID] = useState(props.model.currentComp);
+  const [currentComp, setCurrentComp] = useState(null);
+
+  console.log(currentComp)
+  console.log(props.model.currentComp);
+
+  useEffect(()=>{ 
+      setCurrentID(props.model.currentComp)
+      async function getComp(){
+      let data = await MatchSource.getStandings(currentID);
+      setCurrentComp(data);
+    }
+    getComp()
+  }, [props.model])
+
+  return (<React.Fragment>
+    { currentComp && <CompetitionSummary match = {currentComp}/>}
+    </React.Fragment>);
 }
 export default CompSumPresenter;

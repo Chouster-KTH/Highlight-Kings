@@ -1,7 +1,6 @@
 import '../css/comp.css'
 import '../css/sidebar.css'
 import {Link} from 'react-router-dom';
-import CompSumPresenter from './presenters/compSummaryPresenter';
 
 function Competitions(props){
   const ids = [2001, 2019, 2002, 2015, 2003, 2017, 2014, 2021];
@@ -14,8 +13,8 @@ return(<div className ="comps">
   
     {
     compArr.map(function(x){return[
-      <div key ={x.id} onClick={e=>{CompSumPresenter(x.id)}}>
-        <Link className = "compLink" to = "/competitions">
+      <div key ={x.id} onClick={e=>{props.chosenComp(x.id)}}>
+        <Link className = "compLink" to = "/selectedcompetition">
       <img src = {x.id === 2001 ? x.emblemUrl: x.area.ensignUrl} height = {100}/>
     <li>
       {x.id === 2014 ? "La Liga" : x.name}

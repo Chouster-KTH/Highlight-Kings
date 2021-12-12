@@ -1,6 +1,7 @@
 import '../css/compSum.css';
 
 function CompetitionSummary(props){
+  console.log(props);
   var allMatches = props.match.matches;
   
 
