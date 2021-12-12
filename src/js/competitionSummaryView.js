@@ -1,6 +1,13 @@
 import '../css/compSum.css';
 
-function CompetitionSummary(props){
+const setLive = <span id = "live">LIVE</span>;
+
+export function CompetitionSearch(){
+return(<div>
+
+</div>);
+}
+export function CompetitionSummary(props){
   console.log(props);
   var allMatches = props.match.matches;
   
@@ -22,17 +29,15 @@ function CompetitionSummary(props){
       <tr id = "tRow" key ={x.id}>
         <td>Date: {x.utcDate}</td>
         <td id ="teamsTable">{x.homeTeam.name} VS {x.awayTeam.name} </td>
-        <td>Match status: {x.status}</td>
+        <td id ="p1">Match status: {x.status === "IN_PLAY" ? setLive : x.status}</td>
         <td>Score: {x.score.fullTime.homeTeam}-{x.score.fullTime.awayTeam}</td>
       </tr>
       ];})
       }
     </tbody>
   </table>
-   
   </div>
 
   );
+  
 }
-
-export default CompetitionSummary;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MatchSource from '../apiSource/matchSource';
-import CompetitionSummary from "../competitionSummaryView";
+import {CompetitionSummary, CompetitionSearch} from "../competitionSummaryView";
 
 function CompSumPresenter(props){
 
@@ -20,6 +20,7 @@ function CompSumPresenter(props){
   }, [props.model])
 
   return (<React.Fragment>
+    <CompetitionSearch/>
     { currentComp && <CompetitionSummary match = {currentComp}/>}
     </React.Fragment>);
 }

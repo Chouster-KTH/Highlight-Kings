@@ -1,18 +1,22 @@
 .compSummary {
   padding-left: 300px;
   padding-bottom: 20px;
-  background-color: #50c878;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   text-align: left;
 }
 .compSummary table {
-  background-color: rgb(202, 200, 200);
-  border: 1px solid black;
-  border-spacing: 8px 20px;
+  border-spacing: 0px 20px;
   margin: auto;
 }
+
+.compSummary td {
+  background-color: rgb(202, 200, 200);
+  border: 1px solid black;
+  font-size: 20px;
+}
+
 .compSummary th {
   background: #5dcce7;
   color: white;
