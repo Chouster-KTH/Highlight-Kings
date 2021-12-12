@@ -9,7 +9,7 @@ import downvote from '../images/downvote.png';
 
 function LatestHighlights(props) {
     const hlArrayFull = props.highlights.response;
-    const hlArray = hlArrayFull.slice(0, 20);
+    var hlArray = hlArrayFull.slice(0, 20);
     return (
         <div className="latestHighlights">
             <h1 className="latestHighlights-header">
@@ -28,6 +28,14 @@ function LatestHighlights(props) {
                         <br />
                     </div>
                 ))}
+                <div className="pageControls">
+                    <button className="pageButton">Previous</button>
+                    <a className="pageNumber">1</a>
+                    <a className="pageNumber" onClick={hlArray=hlArrayFull.slice(20,40)}>2</a>
+                    <a className="pageNumber">3</a>
+                    <a className="pageNumber">4</a>
+                    <button className="pageButton">Next</button>
+                </div>
             </div>
         </div>
     );
