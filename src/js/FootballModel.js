@@ -1,5 +1,4 @@
-import HighlightSource from "./apiSource/highlightSource";
-import MatchSource from "./apiSource/matchSource";
+
 class FootballModel{
     constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, user = null){
         this.highlights = highlights;
@@ -8,12 +7,6 @@ class FootballModel{
         this.currentComp = currentComp;
         this.observers = observers;
         this.user = user;
-        this.addDataFromAPIs();
-    }
-
-    addDataFromAPIs(){
-        Promise.all([HighlightSource.getHighlight(), 
-            MatchSource.getAllCompetitions()]).then((dt) => {this.highlights = dt[0]; this.matchData = dt[1]})  
     }
 
     selectCompetition(compID){

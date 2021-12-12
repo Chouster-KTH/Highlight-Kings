@@ -8,14 +8,12 @@ function LatestHighlightsPresenter(props){
 
   useEffect(()=>{
     async function getHLight(){
-      let data = props.model.highlights;
+      let data = await HighlightSource.getHighlight();
       setHLight(data);
     }
     getHLight()
   }, [])
   
-  
-  console.log(hLight);
 
   return (<React.Fragment>
     {hLight && <LatestHighlights 
