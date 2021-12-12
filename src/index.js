@@ -7,13 +7,14 @@ import reportWebVitals from './reportWebVitals';
 import HighlightSource from './js/apiSource/highlightSource.js';
 //import LatestHighlights from './js/latestHighlightsView'
 import FootballModel from './js/FootballModel';
+
 const footballModel = new FootballModel();
-HighlightSource.getHighlight().then((dt) => 
+
 ReactDOM.render(
   <React.StrictMode>
-    <App highlights ={dt} model = {footballModel} />   
+    <App model = {footballModel} />   
   </React.StrictMode>,
-  document.getElementById('root'))
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

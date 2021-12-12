@@ -11,6 +11,7 @@ import SignInPresenter from './js/presenters/signInPresenter';
 import SignUpPresenter from './js/presenters/signUpPresenter';
 import MyAccount from './js/myAccountView';
 import CompSumPresenter from './js/presenters/compSummaryPresenter';
+import LatestHighlightsPresenter from './js/presenters/latestHighlightsPresenter';
 
 
 
@@ -25,7 +26,7 @@ function App(props) {
         <Routes>
           <Route path="/home" element={<HomePage />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="/highlights" element={<LatestHighlights highlights={props.highlights} />} />
+          <Route path="/highlights" element={<LatestHighlightsPresenter model ={props.model} />} />
           <Route path="/competitions" element={<CompetitionPresenter model = {props.model}/>} ></Route>
           <Route path ="/selectedcompetition" element={<CompSumPresenter model = {props.model}/>}></Route>
           <Route path="/aboutUs" element={<AboutUs />}> </Route>
