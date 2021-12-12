@@ -1,5 +1,6 @@
 import '../css/homePage.css'
 import Logo from '../images/logo.png';
+import upvote from '../images/upvote.png';
 
 function HomePage(props){
 return (
@@ -18,6 +19,10 @@ return (
                 {props.model.upVoted.map((highLight, index) => (
                     <div className="upvoted" key={index}>
                         <p className="upvoted-header">{highLight.title}</p>
+                        <p className="numberOfUpvotes">
+                            <img src= {upvote} alt = "up" width="25" height="25"/>
+                            {"Upvoted: "}{0}
+                        </p>
                         <div className="iframeContainerUpVoted">
                             <iframe src={highLight.videos[0].embed.substring(90, 185)} frameBorder="0" width="100%" height="100%" allowFullScreen="" allow="autoplay; fullscreen"></iframe>
                         </div>
