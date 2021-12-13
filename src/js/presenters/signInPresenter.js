@@ -10,6 +10,10 @@ function SignInPresenter(props) {
 
     let text = "";
     let navigate = useNavigate();
+    if(props.model.currentUser !== null)
+    {
+        props.model.logOutUser();
+    }
 
 
     return (
@@ -21,12 +25,12 @@ function SignInPresenter(props) {
                 onSubmit={() => {
                     text = props.model.logInUser(email, password);
                     setMessage(text);
-                    let f1 = function (text) {
+                    let func = function (text) {
                         if (text === "")
                             navigate('/myAccount')
                     };
 
-                    f1(text);
+                    func(text);
                 }
                 }
             />

@@ -1,6 +1,6 @@
 
 class FootballModel {
-  constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, user = null) {
+  constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, user = null/* user? */) {
     this.highlights = highlights;
     this.upVoted = upVoted;
     this.popular = popular;
@@ -8,6 +8,7 @@ class FootballModel {
     this.observers = observers;
     this.currentUser = null;
     this.users = [];
+    this.currentUserUpvoteCount = 0;
   }
 
   selectCompetition(compID) {
@@ -44,6 +45,7 @@ class FootballModel {
   addUpVote(prop) {
     this.upVoted = [...this.upVoted, prop];
     console.log(this.upVoted);
+    this.upvoteCountUpdateForCurrentUser();
     return this.upVoted;
   }
   removeUpVote(id) { }
@@ -82,6 +84,8 @@ class FootballModel {
     let newUser = {};
     newUser.email = email;
     newUser.password = password;
+    newUser.upvoteCount = 0;
+    this.currentUserUpvoteCount = 0;
     this.users.push(newUser);
     this.logInUser(email, password);
     return "";
@@ -94,6 +98,7 @@ class FootballModel {
     if (this.userExists(email)) {
       if (this.passwordIsCorrect(email, password)) {
         this.currentUser = email;
+        this.notifyObservers();
         return "";
       }
       else {
@@ -105,6 +110,12 @@ class FootballModel {
 
       return "No such user"; //if user does not exist
     }
+  }
+
+  logOutUser()
+  {
+    this.currentUser = null;
+    this.notifyObservers();
   }
 
   //Check if the username (email) has been registered
@@ -152,6 +163,26 @@ class FootballModel {
   passwordIsLongEnough(password) {
     return password.length >= 8;
   }
+
+  //Count total number of upvotes for each user
+  upvoteCountUpdateForCurrentUser()
+  {
+    if (this.currentUser === null)
+    return;
+
+    this.users.forEach(element => {
+
+      //Find current user
+      if (this.currentUser === element.email) 
+      {
+        element.upvoteCount++;
+        this.currentUserUpvoteCount++;
+        console.log("User has upvoted " + element.upvoteCount + " times");       
+      }
+    })
+  }
+
+  
 
 }
 

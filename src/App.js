@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import LatestHighlights from './js/latestHighlightsView';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './js/homePageView';
@@ -19,21 +20,40 @@ import LatestHighlightsPresenter from './js/presenters/latestHighlightsPresenter
 
 
 function App(props) {
+
+  const [signInTxt, setSignInTxt] = React.useState('Sign in');
+
+
+  React.useEffect(function () {
+    function obs() {
+      if (props.model.currentUser === null) {
+        setSignInTxt("Sign in");
+      }
+      else {
+        setSignInTxt("Sign out");
+      }
+
+    }
+    props.model.addObserver(obs);
+    return function () { props.model.removeObserver(obs); }
+  }, [props.model]);
+
+
   return (
     <BrowserRouter>
       <div className="flexParent">
-        <SideBar />
+        <SideBar signInTxt={signInTxt} model={props.model}  />
         <Routes>
-          <Route path="/home" element={<HomePage model = {props.model}/>} />
-          <Route path="/" element={<HomePage model = {props.model}/>} />
-          <Route path="/highlights" element={<LatestHighlightsPresenter model ={props.model} />} />
-          <Route path="/competitions" element={<CompetitionPresenter model = {props.model}/>} ></Route>
-          <Route path ="/selectedcompetition" element={<CompSumPresenter model = {props.model}/>}></Route>
+          <Route path="/home" element={<HomePage model={props.model} />} />
+          <Route path="/" element={<HomePage model={props.model} />} />
+          <Route path="/highlights" element={<LatestHighlightsPresenter model={props.model} />} />
+          <Route path="/competitions" element={<CompetitionPresenter model={props.model} />} ></Route>
+          <Route path="/selectedcompetition" element={<CompSumPresenter model={props.model} />}></Route>
           <Route path="/aboutUs" element={<AboutUs />}> </Route>
-          <Route path="/myAccount" element={<MyAccount model = {props.model}/>}> </Route>
-          <Route path="/signIn" element={<SignInPresenter model = {props.model}/>}> </Route>
-          <Route path="/signUp" element={<SignUpPresenter model = {props.model}/>}> </Route>
-      
+          <Route path="/myAccount" element={<MyAccount model={props.model} />}> </Route>
+          <Route path="/signIn" element={<SignInPresenter model={props.model} />}> </Route>
+          <Route path="/signUp" element={<SignUpPresenter model={props.model} />}> </Route>
+
 
         </Routes>
       </div>

@@ -21,12 +21,12 @@ function SignUpPresenter(props) {
                 onSubmit={() => {
                     text = props.model.addUser(email, password);
                     setMessage(text);
-                    let f1 = function (text) {
+                    let func = function (text) {
                         if (text === "")
                             navigate('/myAccount')
                     };
 
-                    f1(text);
+                    func(text);
                 }
                 }
             />
