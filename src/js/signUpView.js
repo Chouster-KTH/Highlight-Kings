@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 function SignUp(props) {
 
     
-    return (
+    return (<form>
         <div className='a'>
             <div id="p">
                 <img src={Logo} alt="Highlight Kings" />
@@ -29,7 +29,7 @@ function SignUp(props) {
             </div>
         </div>
 
-    )
+        </form>)
 }
 
 export default SignUp;
