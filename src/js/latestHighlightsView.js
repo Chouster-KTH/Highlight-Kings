@@ -49,10 +49,10 @@ function LatestHighlights(props) {
                 ))}
                 <div className="pageControls">
                     <button className="pageButton" onClick={e=>{props.pageChange(props.pageNr - 1); console.log(props.pageNr - 1)}}><a href="#top">Back</a></button>
-                    <a className="pageNumber" href="#top" onClick={e=>{props.pageChange(1); console.log(1)}}>1</a>
-                    <a className="pageNumber" href="#top" onClick={e=>{props.pageChange(2); console.log(2)}}>2</a>
-                    <a className="pageNumber" href="#top" onClick={e=>{props.pageChange(3); console.log(3)}}>3</a>
-                    <a className="pageNumber" href="#top" onClick={e=>{props.pageChange(4); console.log(4)}}>4</a>
+                    <a href="#top" onClick={e=>{props.pageChange(1); console.log(1)}}>1</a>
+                    <a href="#top" onClick={e=>{props.pageChange(2); console.log(2)}}>2</a>
+                    <a href="#top" onClick={e=>{props.pageChange(3); console.log(3)}}>3</a>
+                    <a href="#top" onClick={e=>{props.pageChange(4); console.log(4)}}>4</a>
                     <button className="pageButton" onClick={e=>{props.pageChange(props.pageNr + 1); console.log(props.pageNr + 1)}}><a href="#top">Next</a></button>
                 </div>
             </div>
