@@ -54,19 +54,23 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    /*float: left;*/
-}
-.pageControls > .pageNumber{
-    font-family:'Courier New', Courier, monospace;
-    font-size: large;
-    font-weight: bolder;
-    padding: 8px;
 }
 .pageControls > .pageButton{
     padding: 10px 15px;
-    
+    color: black;
     font-weight: bolder;
     background-color: lightgreen;
     border-radius: 8px;
 }
-
+.pageButton > a{
+    font-weight: bolder;
+    color: black;
+}
+.pageControls > a{
+    font-family:'Courier New', Courier, monospace;
+    font-size: large;
+    font-weight: bolder;
+    color: black;
+    
+    padding: 8px;
+}
