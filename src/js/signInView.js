@@ -2,7 +2,6 @@ import Logo from '../images/logo.png';
 import '../css/signIn.css';
 
 function SignIn(props) {
-
     return (
         <div className='aa'>
             <div id="pp">
@@ -11,6 +10,7 @@ function SignIn(props) {
             <h1 className="signIn-header">
                 Sign in to enjoy all features</h1>
             <div className="bb">
+            <div className="message">{props.message}</div>
                 <div className="cc">
                     <label htmlFor="username">Email: </label><br />
                     <input type="text" id="username" name="username" onInput={e => props.onEmail(e.target.value)}></input><br /><br />

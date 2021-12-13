@@ -17,7 +17,6 @@ function AboutUs(props) {
             </div>
         </div>
  
-
     )
 }
 
