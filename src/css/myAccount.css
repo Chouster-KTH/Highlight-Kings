@@ -5,10 +5,10 @@
 
 .infoText
 {
-    text-align: left;
+    text-align: center;
     padding-left: 25%;
     padding-right: 25%;
-    padding-top: 10px;
+    padding-top: 0px;
     font-size: 25;
         
 }
@@ -16,4 +16,18 @@
 .myAccount-content
 {
     padding-top: 40px;
+}
+
+.myUpvotedGames
+{
+    font-size: 40;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+
+.hidden
+{
+ display:none;   
 }
