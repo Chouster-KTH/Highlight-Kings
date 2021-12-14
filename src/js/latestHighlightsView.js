@@ -42,7 +42,12 @@ function LatestHighlights(props) {
                             <img src={downvote} alt = "down" onClick={event => console.log("User downvoted game: " + highLight.title)} width="25" height="25" />
                         </div>
                         <div className="iframeContainer">
-                            <iframe src={highLight.videos[0].embed.substring(90, 185)} frameBorder="0" width="100%" height="100%" allowFullScreen="" allow="autoplay; fullscreen"></iframe>
+                            <iframe src={highLight.videos[0].embed.substring(90, 185)} title={highLight.title} frameBorder="0" allow="autoplay; fullscreen"></iframe>
+                        </div>
+                        <div className="matchData">
+                            <p>{highLight.title}</p>
+                            <p>{highLight.competition}</p>
+                            <p>{["ENGLAND: Premier League","SPAIN: La Liga","FRANCE: Ligue 1","ITALY: Serie A","GERMANY: Bundesliga","NETHERLANDS: Eredivisie","PORTUGAL: Liga Portugal","CHAMPIONS LEAGUE"].includes(highLight.competition) ? "There is data" : "no data"}</p>
                         </div>
                         <br />
                     </div>
