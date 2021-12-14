@@ -21,7 +21,7 @@ function LatestHighlightsPresenter(props){
     pageChange={nr=>{if(nr > 0 && nr < 5)setPage(nr)}}
     pageNr={page} 
     highlights={hLight} 
-    addUpvoted = {upvoted => props.model.addUpVote(upvoted)}/>}
+    addUpVote = {upvoted => props.model.addUpVote(upvoted)}/>}
     </React.Fragment>);
 }
 

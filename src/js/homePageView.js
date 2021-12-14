@@ -16,12 +16,12 @@ return (
             On this page, most upvoted highlights can be seen (under construction).
         </h2>
         <div className="upvoted-grid">
-                {props.model.upVoted.map((highLight, index) => (
+                {props.upVoted.map((highLight, index) => (
                     <div className="upvoted" key={index}>
                         <p className="upvoted-header">{highLight.title}</p>
                         <p className="numberOfUpvotes">
-                            <img src= {upvote} alt = "up" width="25" height="25"/>
-                            {"Upvoted: "}{0}
+                            <img src={upvote} alt = "up" onClick={() => props.addUpVote(highLight)} width="25" height="25" />  
+                            {"Upvoted: "+ highLight.upVotes +" times"}
                         </p>
                         <div className="iframeContainerUpVoted">
                             <iframe src={highLight.videos[0].embed.substring(90, 185)} frameBorder="0" width="100%" height="100%" allowFullScreen="" allow="autoplay; fullscreen"></iframe>

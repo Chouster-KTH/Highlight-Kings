@@ -13,7 +13,7 @@ import SignUpPresenter from './js/presenters/signUpPresenter';
 import MyAccount from './js/myAccountView';
 import CompSumPresenter from './js/presenters/compSummaryPresenter';
 import LatestHighlightsPresenter from './js/presenters/latestHighlightsPresenter';
-
+import HomePagePresenter from './js/presenters/homePagePresenter';
 
 
 
@@ -44,8 +44,8 @@ function App(props) {
       <div className="flexParent">
         <SideBar signInTxt={signInTxt} model={props.model}  />
         <Routes>
-          <Route path="/home" element={<HomePage model={props.model} />} />
-          <Route path="/" element={<HomePage model={props.model} />} />
+          <Route path="/home" element={<HomePagePresenter model={props.model} />} />
+          <Route path="/" element={<HomePagePresenter model={props.model} />} />
           <Route path="/highlights" element={<LatestHighlightsPresenter model={props.model} />} />
           <Route path="/competitions" element={<CompetitionPresenter model={props.model} />} ></Route>
           <Route path="/selectedcompetition" element={<CompSumPresenter model={props.model} />}></Route>

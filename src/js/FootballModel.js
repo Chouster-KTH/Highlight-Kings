@@ -42,12 +42,40 @@ class FootballModel {
 
 
 
-  addUpVote(prop) {
-    this.upVoted = [...this.upVoted, prop];
-    console.log(this.upVoted);
+  addUpVote(props) {
+    let item = this.upVoted.find(item => item.title === props.title);
+    
+    if (item === undefined){
+      props.upVotes = 1;
+      this.upVoted = [...this.upVoted, props];
+    }
+    else{
+      let index = this.upVoted.indexOf(item);
+      this.upVoted[index].upVotes++;
+      this.sortUpVote();
+    }
     this.upvoteCountUpdateForCurrentUser();
     return this.upVoted;
   }
+
+  sortUpVote() {
+    let length = this.upVoted.length;
+    let currentNum;
+    let current;
+
+    for (let i = length-1; i >= 0; i--) {
+      currentNum = this.upVoted[i].upVotes;
+      current = this.upVoted[i];
+      console.log(currentNum);
+      let j = i;
+      while ((j < length-1) && (this.upVoted[j + 1].upVotes > currentNum)) {
+        this.upVoted[j] = this.upVoted[j + 1];
+        j++;
+      }
+      this.upVoted[j] = current;
+    }
+  }
+
   removeUpVote(id) { }
   addDownVote(id) { }
   removeDownVote(id) { }

@@ -38,7 +38,7 @@ function LatestHighlights(props) {
                     <div className="highlights" key={index}>
                         <p className="highlight-header">{highLight.title}</p>
                         <div className="votingButtons">
-                            <img src={upvote} alt = "up" onClick={() => props.addUpvoted(highLight)} width="25" height="25" />
+                            <img src={upvote} alt = "up" onClick={() => props.addUpVote(highLight)} width="25" height="25" />
                             <img src={downvote} alt = "down" onClick={event => console.log("User downvoted game: " + highLight.title)} width="25" height="25" />
                         </div>
                         <div className="iframeContainer">
