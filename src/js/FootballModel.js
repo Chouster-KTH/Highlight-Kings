@@ -116,7 +116,11 @@ class FootballModel {
 
 
 
+  deleteUpvote(props) {
 
+    console.log("User wants to delete an upvote: " + props.title);
+
+  }
 
 
 
@@ -228,9 +232,9 @@ class FootballModel {
     newGame.title = props.title;
     newGame.date = props.date;
     newGame.url = props.matchviewUrl;
-    this.users[this.currentUser - 1].upvotedGames.push(newGame);
+    this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
     this.users[this.currentUser - 1].upvoteCount++;
-    //console.log("User has upvoted " + this.users[this.currentUser - 1].upvoteCount + " times");
+    //console.log("User has upvoted " + this.users[this.currentUser - 1].upvoteCount + " times"); 
     return true;
   }
 

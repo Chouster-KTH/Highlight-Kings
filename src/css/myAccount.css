@@ -1,4 +1,4 @@
-.picture
+.name
 {
     text-align: center;
 }
@@ -30,4 +30,11 @@
 .hidden
 {
  display:none;   
+}
+
+
+.listOfGames
+{
+    text-align: left;
+    padding-left: 240px;
 }
