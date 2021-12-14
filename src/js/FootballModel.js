@@ -106,7 +106,7 @@ class FootballModel {
     }
 
     if (!this.passwordIsLongEnough(password)) {
-      return "Password must be least 8 characters"
+      return "Password must be at least 8 characters"
     }
 
     let newUser = {};
