@@ -4,7 +4,6 @@ import HomePage from '../homePageView';
 function HomePagePresenter (props){
     const[upVoted, setUpVoted] = useState(props.model.upVoted);
 
-    /*
     useEffect(()=>{
         function getUpVoted(){
           let data = props.model.upVoted;
@@ -12,14 +11,6 @@ function HomePagePresenter (props){
         }
         getUpVoted()
       }, [])
-    */
-   
-    useEffect( function(){
-        function obs(){ setUpVoted(props.model.upVoted);
-        ;}
-        props.model.addObserver(obs);                               
-        return function(){ props.model.removeObserver(obs);}        
-     }, [props.model])     
 
     return (
         <HomePage 
