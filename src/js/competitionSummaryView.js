@@ -1,15 +1,23 @@
 import '../css/compSum.css';
 
-const setLive = <span id = "live">LIVE</span>;
 
-export function CompetitionSearch(){
-return(<div>
-
+export function CompetitionSearch(props){
+  const title = props.compTitle.competition.name;
+return(<div className="compSummary">
+  <h1>{title === "Primera Division" ? "La Liga" : title}</h1>
+<span>
+  <input onInput={ e=> props.onText(e.target.value) }placeholder = {props.placeholder || 'Enter date: "yyyy-mm-dd"'}/>
+  <button onClick={event=>props.onSearch()}>Find matches</button>
+  </span>
 </div>);
 }
 export function CompetitionSummary(props){
+  var allMatches;
   console.log(props);
-  var allMatches = props.match.matches;
+  if(props.teamM)
+  var allMatches = props.teamM;
+  else
+  allMatches = props.match.matches;
   
 
   return(<div className="compSummary">
@@ -17,7 +25,6 @@ export function CompetitionSummary(props){
   <table>
   <thead>
     <tr>
-    <th>{props.match.competition.name}</th>
     </tr>
     <tr id="tDates">
     <td>Start: {allMatches[0].season.startDate} &nbsp;&nbsp; End: {allMatches[0].season.endDate}</td>
@@ -41,3 +48,5 @@ export function CompetitionSummary(props){
   );
   
 }
+
+const setLive = <span id = "live">LIVE</span>;

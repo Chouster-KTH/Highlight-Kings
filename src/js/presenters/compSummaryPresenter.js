@@ -4,24 +4,33 @@ import {CompetitionSummary, CompetitionSearch} from "../competitionSummaryView";
 
 function CompSumPresenter(props){
 
-  const [currentID, setCurrentID] = useState(props.model.currentComp);
+  const [currentID, setCurrentID] = useState(props.model.currentComp.id);
   const [currentComp, setCurrentComp] = useState(null);
+  const [matches, setMatches] = useState(props.model.allMatches);
+  const [teamName, setTeamName] = useState("");
+  const [teamMatch, setTeamMatch] = useState(null);
 
-  console.log(currentComp)
   console.log(props.model.currentComp);
 
-  useEffect(()=>{ 
-      setCurrentID(props.model.currentComp)
-      async function getComp(){
+  useEffect( ()=>{ async function getComp(){ 
       let data = await MatchSource.getStandings(currentID);
+      setCurrentID(props.model.currentComp.id);
+      setMatches(data);
+      props.model.setMatches(data);
       setCurrentComp(data);
-    }
-    getComp()
+      }
+      setCurrentID(props.model.currentComp.id);
+      getComp();
+    
   }, [props.model])
 
   return (<React.Fragment>
-    <CompetitionSearch/>
-    { currentComp && <CompetitionSummary match = {currentComp}/>}
+    { currentComp && <CompetitionSearch
+    onText={txt => setTeamName(txt)}
+    onSearch={()=>setTeamMatch(props.model.findMatches(teamName))}
+    compTitle = {currentComp}/>}
+    { currentComp && <CompetitionSummary 
+    match = {matches} teamM = {teamMatch}/>}
     </React.Fragment>);
 }
 export default CompSumPresenter;

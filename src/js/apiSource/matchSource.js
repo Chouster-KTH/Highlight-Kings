@@ -10,7 +10,7 @@ const MatchSource =  {
     }
     ,
     async matchCall(params) {
-        let response = await fetch("http://api.football-data.org/v2/matches/" +params, {
+        let response = await fetch("http://api.football-data.org/v2/" +params+ "matches/", {
             "method": "GET",              // HTTP method
             "headers": {                  // HTTP headers
                 'X-Auth-Token': "108695e7a2ba4fe6982714e3c844c10a"
@@ -31,8 +31,22 @@ const MatchSource =  {
     return MatchSource.compCall(id+ "/matches"); 
     }
     ,
+    getFromDate(id, startDate, endDate){
+        console.log(id, startDate, endDate);
+    return MatchSource.compCall(id+"/matches?dateFrom="+startDate+"&dateTo=" +endDate)
+        .then(data => console.log(data));
+    }
+    ,
+    getFromStatus(id, status){
+        return MatchSource.compCall(id+ "/matches?status=" +status)
+        .then(data => data);
+    }
+    ,
     getMatches(id){
         return MatchSource.compCall(id+ "/standings")
     }
+    
 }
 export default MatchSource;
+
+

@@ -1,19 +1,30 @@
 
 class FootballModel {
-  constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, user = null/* user? */) {
+  constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, allMatches = null, user = null/* user? */) {
     this.highlights = highlights;
     this.upVoted = upVoted;
     this.popular = popular;
     this.currentComp = currentComp;
+    this.allMatches = allMatches;
     this.observers = observers;
     this.currentUser = null;
     this.users = [];
     this.currentUserUpvoteCount = 0;
   }
 
-  selectCompetition(compID) {
-    this.currentComp = compID;
-    this.notifyObservers();
+  selectCompetition(comp) {
+    this.currentComp = comp;
+  }
+
+  setMatches(matches){
+      this.allMatches = matches;
+  }
+
+  findMatches(teamName){
+    console.log(teamName);
+    let matches = this.allMatches.matches.filter(mtch=>mtch.homeTeam.name === teamName || mtch.awayTeam.name === teamName);
+    console.log(matches);
+    return matches;
   }
 
   addObserver(callback) {
