@@ -1,6 +1,6 @@
 
 class FootballModel {
-  constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, allMatches = null, user = null/* user? */) {
+  constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, allMatches = null, users = []) {
     this.highlights = highlights;
     this.upVoted = upVoted;
     this.popular = popular;
@@ -8,7 +8,7 @@ class FootballModel {
     this.allMatches = allMatches;
     this.observers = observers;
     this.currentUser = null;
-    this.users = [];
+    this.users = users;
   }
 
   selectCompetition(comp) {
@@ -19,11 +19,19 @@ class FootballModel {
     this.allMatches = matches;
   }
 
-  findMatches(teamName) {
-    console.log(teamName);
-    let matches = this.allMatches.matches.filter(mtch => mtch.homeTeam.name === teamName || mtch.awayTeam.name === teamName);
-    console.log(matches);
+  findMatches(teamName, type){
+    let matches = this.allMatches.matches.filter(mtch=>
+        mtch.homeTeam.name.includes(teamName) || 
+        mtch.awayTeam.name.includes(teamName));
+        if(type === "ALL")
+        return matches;
+
+        else
+        matches = matches.filter(mtp => mtp.status === type);
+
+        console.log(matches);
     return matches;
+    
   }
 
   addObserver(callback) {

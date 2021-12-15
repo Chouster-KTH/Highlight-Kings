@@ -1,16 +1,6 @@
 const MatchSource =  {
     async compCall(params) {
-        let response = await fetch("https://api.football-data.org/v2/competitions/" +params, {
-            "method": "GET",              // HTTP method
-            "headers": {                  // HTTP headers
-                'X-Auth-Token': "108695e7a2ba4fe6982714e3c844c10a"
-            }
-        })
-    return response.json();
-    }
-    ,
-    async matchCall(params) {
-        let response = await fetch("http://api.football-data.org/v2/" +params+ "matches/", {
+        let response = await fetch("https://api.football-data.org/v2/" +params, {
             "method": "GET",              // HTTP method
             "headers": {                  // HTTP headers
                 'X-Auth-Token': "108695e7a2ba4fe6982714e3c844c10a"
@@ -20,15 +10,13 @@ const MatchSource =  {
     }
     ,
     getAllCompetitions() {
-        return MatchSource.compCall("");
+        return MatchSource.compCall("/competitions/");
     }
     ,
-    getAllMatches(){
-        return MatchSource.matchCall("");
-    }
-    ,
-    getStandings(id){    
-    return MatchSource.compCall(id+ "/matches"); 
+    
+    getMatches(id){    
+    return MatchSource.compCall("/competitions/" +id+ "/matches") 
+    .then(data => data);
     }
     ,
     getFromDate(id, startDate, endDate){
@@ -42,8 +30,15 @@ const MatchSource =  {
         .then(data => data);
     }
     ,
-    getMatches(id){
-        return MatchSource.compCall(id+ "/standings")
+    getStandings(id){
+        return MatchSource.compCall("/competitions/" +id+ "/standings")
+        .then(data => data);
+    }
+    ,
+    getTeamCrests(id){
+        return MatchSource.compCall("/competitions/"+id+"/teams")
+        .then(data=> data);
+
     }
     
 }
