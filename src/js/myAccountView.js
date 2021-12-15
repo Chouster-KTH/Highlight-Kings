@@ -1,6 +1,5 @@
 import Logo from '../images/logo.png';
 import '../css/myAccount.css';
-import SignIn from '../js/signInView';
 
 
 function MyAccount(props) {
@@ -11,22 +10,32 @@ function MyAccount(props) {
     let key1 = 0;
     let message = "";
     let votingMessage = "";
+    let secondMessage = "";
     if (typeof props.model === "undefined") { message = "Internal error - footballModel not defined" }
     else
         if (typeof props.model.currentUser === "undefined" || props.model.currentUser === null) {
-            message = "Please sign in to see this page.";
+            message = "Please sign in to see your upvoted games.";
         }
         else {
             message = "Welcome " + props.model.users[props.model.currentUser - 1].email + "!";
-            votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvotes.";
+            if (props.model.users[props.model.currentUser - 1].upvoteCount === 1) {
+                votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvote.";
+            }
+
+            if (props.model.users[props.model.currentUser - 1].upvoteCount === 0) {
+                votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvotes."; //<br/> 
+                secondMessage = "Please upvote a video for it to show on this page.";
+            }
+            if (props.model.users[props.model.currentUser - 1].upvoteCount > 1)
+            {
+                votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvotes.";
+            }
             if (props.model.users[props.model.currentUser - 1].upvoteCount > 0) {
                 games = props.model.users[props.model.currentUser - 1].upvotedGames;
                 voteClass = "myUpvotedGames";
                 tableClass = "listOfGames";
             }
         }
-
-
 
 
     return (
@@ -38,9 +47,9 @@ function MyAccount(props) {
                 My account</h1>
 
             <div type='text' className='infoText'>{message}</div>
-            <div className="infoText">{votingMessage}</div>
+            <div className="infoText">{votingMessage}<br/>{secondMessage}</div>
             <div className={voteClass}>
-                History of upvoted games by me
+                Upvoted games by me
             </div>
             <div className="listOfGames">
                 <table className={tableClass}>

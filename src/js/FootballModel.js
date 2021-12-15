@@ -9,7 +9,6 @@ class FootballModel {
     this.observers = observers;
     this.currentUser = null;
     this.users = [];
-    //this.currentUserUpvoteCount = 0;
   }
 
   selectCompetition(comp) {
@@ -62,7 +61,7 @@ class FootballModel {
     }
 
     //Check that the user does not upvote each game more than once
-    if (this.gameHasBeenUpvotedByUser(props)) {
+    if (this.gameHasAlreadyBeenUpvotedByUser(props)) {
       alert("You can only upvote each game once!");
       return this.upvotedGames;
     }
@@ -102,7 +101,7 @@ class FootballModel {
     }
   }
 
-  removeUpVote(id) { }
+  //removeUpVote(id) { }
   addDownVote(id) { }
   removeDownVote(id) { }
   addToPopular(id) { }
@@ -119,8 +118,51 @@ class FootballModel {
   deleteUpvote(props) {
 
     console.log("User wants to delete an upvote: " + props.title);
+    let item = this.upVoted.find(item => item.title === props.title);
 
+    if (item === undefined) {
+      console.log("Item not found: " + props.title);
+    }
+
+    else {
+      let index = this.upVoted.indexOf(item);
+      if (this.upVoted[index].upVotes > 0) {
+        this.upVoted[index].upVotes--;
+        this.sortUpVote();
+      }
+      else {
+        console.log("ERROR: " + props.title + " has no votes. Number of votes cannot be decremented.");
+      }
+    }
+    this.deleteUpvoteFromUsersArray(props);
   }
+
+
+
+  deleteUpvoteFromUsersArray(props) {
+
+    let itemToBeDeleted = this.users[this.currentUser - 1].upvotedGames.find(item => item.title === props.title);
+
+    if (itemToBeDeleted === undefined) {
+      console.log("undefined");
+      return;
+
+    }
+
+    this.users[this.currentUser - 1].upvotedGames = Object.values(this.users[this.currentUser - 1].upvotedGames).filter(removeFilter);
+
+
+    function removeFilter(item) {
+      return item.title !== itemToBeDeleted.title;
+    }
+
+    if (this.users[this.currentUser - 1].upvoteCount > 0) {
+      this.users[this.currentUser - 1].upvoteCount--;
+    }
+
+    this.notifyObservers(); //Should skip if if not in menu
+  }
+
 
 
 
@@ -150,6 +192,7 @@ class FootballModel {
   }
 
 
+  //Sign in user
   logInUser(email, password) {
     console.log("User wants to sign in: email = " + email + ", password = " + password);
 
@@ -234,12 +277,11 @@ class FootballModel {
     newGame.url = props.matchviewUrl;
     this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
     this.users[this.currentUser - 1].upvoteCount++;
-    //console.log("User has upvoted " + this.users[this.currentUser - 1].upvoteCount + " times"); 
     return true;
   }
 
   //Return true if the game has previously been upvoted by the user
-  gameHasBeenUpvotedByUser(props) {
+  gameHasAlreadyBeenUpvotedByUser(props) {
     let hasBeenUpvoted = false;
     this.users[this.currentUser - 1].upvotedGames.forEach(element => {
       if (element.title === props.title)
