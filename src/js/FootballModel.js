@@ -19,11 +19,19 @@ class FootballModel {
     this.allMatches = matches;
   }
 
-  findMatches(teamName) {
-    console.log(teamName);
-    let matches = this.allMatches.matches.filter(mtch => mtch.homeTeam.name === teamName || mtch.awayTeam.name === teamName);
-    console.log(matches);
+  findMatches(teamName, type){
+    let matches = this.allMatches.matches.filter(mtch=>
+        mtch.homeTeam.name.includes(teamName) || 
+        mtch.awayTeam.name.includes(teamName));
+        if(type === "ALL")
+        return matches;
+
+        else
+        matches = matches.filter(mtp => mtp.status === type);
+
+        console.log(matches);
     return matches;
+    
   }
 
   addObserver(callback) {

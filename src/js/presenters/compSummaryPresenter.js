@@ -9,28 +9,37 @@ function CompSumPresenter(props){
   const [matches, setMatches] = useState(props.model.allMatches);
   const [teamName, setTeamName] = useState("");
   const [teamMatch, setTeamMatch] = useState(null);
+  const [type, setType] = useState("");
+  const [teams, setTeam] = useState(null);
 
   console.log(props.model.currentComp);
 
   useEffect( ()=>{ async function getComp(){ 
-      let data = await MatchSource.getStandings(currentID);
+      let data = await MatchSource.getMatches(currentID);
       setCurrentID(props.model.currentComp.id);
       setMatches(data);
       props.model.setMatches(data);
       setCurrentComp(data);
       }
+      async function getCrest(){
+        let data = await MatchSource.getTeamCrests(currentID);
+        setTeam(data);
+
+      }
       setCurrentID(props.model.currentComp.id);
       getComp();
+      getCrest();
     
   }, [props.model])
 
   return (<React.Fragment>
     { currentComp && <CompetitionSearch
     onText={txt => setTeamName(txt)}
-    onSearch={()=>setTeamMatch(props.model.findMatches(teamName))}
+    onType={tp=>setType(tp)}
+    onSearch={()=>setTeamMatch(props.model.findMatches(teamName, type))}
     compTitle = {currentComp}/>}
     { currentComp && <CompetitionSummary 
-    match = {matches} teamM = {teamMatch}/>}
+    match = {matches} teamM = {teamMatch} teams = {teams}/>}
     </React.Fragment>);
 }
 export default CompSumPresenter;
