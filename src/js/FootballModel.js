@@ -83,7 +83,7 @@ class FootballModel {
       this.upVoted[index].upVotes++;
       this.sortUpVote();
     }
-
+    this.notifyObservers();
     return this.upVoted;
   }
 

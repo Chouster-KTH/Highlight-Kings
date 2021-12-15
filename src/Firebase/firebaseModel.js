@@ -1,11 +1,18 @@
 import firebase from "firebase/compat";
-const REF = '/';
+const REF = 'highlightkings';
 function persistModel(model){
     let loadingFromFirebase = false;// boolean flag, used in a JS closure
     
     model.addObserver(function(){
-        firebase.database().ref(REF).set(
-            model.testValue
+        if (loadingFromFirebase) {
+			return;
+		}
+        console.log(model.testValue)
+        firebase.database().ref(REF).set({
+            testValue2 : model.testValue,
+            testValue3 : 5,
+            upVoted : model.upVoted
+        }
         );
     });
     //firebase.database().ref('/').set();
@@ -13,7 +20,7 @@ function persistModel(model){
         loadingFromFirebase = true;
 		console.log("Retrieving data...");
 		if (data.val()) {
-			console.log(data.val().testValue);
+			model.upVoted = data.val().upVoted;
 		}
 		loadingFromFirebase = false;
 	});
