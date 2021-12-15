@@ -33,7 +33,7 @@ function LatestHighlights(props) {
             <h1 className="latestHighlights-header">
                 Latest Highlights</h1>
             <div className="highlights-grid">
-                <h3 id="top">Showing highlights {props.pageNr * 20 - 20} to {props.pageNr * 20}</h3>
+                <h3 id="top">Showing highlights {props.pageNr * 20 - 19} to {props.pageNr * 20}</h3>
                 {hlArray.map((highLight, index) => (
                     <div className="highlights" key={index}>
                         <p className="highlight-header">{highLight.title}</p>
