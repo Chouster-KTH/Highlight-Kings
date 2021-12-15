@@ -10,7 +10,7 @@ import CompetitionPresenter from './js/presenters/competitionPresenter';
 //import SignUp from './js/signUpView';
 import SignInPresenter from './js/presenters/signInPresenter';
 import SignUpPresenter from './js/presenters/signUpPresenter';
-import MyAccount from './js/myAccountView';
+import MyAccountPresenter from './js/presenters/myAccountPresenter';
 import CompSumPresenter from './js/presenters/compSummaryPresenter';
 import LatestHighlightsPresenter from './js/presenters/latestHighlightsPresenter';
 import HomePagePresenter from './js/presenters/homePagePresenter';
@@ -50,7 +50,7 @@ function App(props) {
           <Route path="/competitions" element={<CompetitionPresenter model={props.model} />} ></Route>
           <Route path="/selectedcompetition" element={<CompSumPresenter model={props.model} />}></Route>
           <Route path="/aboutUs" element={<AboutUs />}> </Route>
-          <Route path="/myAccount" element={<MyAccount model={props.model} />}> </Route>
+          <Route path="/myAccount" element={<MyAccountPresenter model={props.model} />}> </Route>
           <Route path="/signIn" element={<SignInPresenter model={props.model} />}> </Route>
           <Route path="/signUp" element={<SignUpPresenter model={props.model} />}> </Route>
 

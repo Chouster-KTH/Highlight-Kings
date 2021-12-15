@@ -20,7 +20,7 @@ function SignUpPresenter(props) {
                 onPassword={(x) => setPassword(x)}
                 onSubmit={() => {
                     text = props.model.addUser(email, password);
-                    setMessage(text);
+                    setMessage(text); console.log("TEXT " + text);
                     let func = function (text) {
                         if (text === "")
                             navigate('/myAccount')

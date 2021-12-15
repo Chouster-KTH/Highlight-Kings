@@ -20,15 +20,17 @@ function MyAccount(props) {
             message = "Welcome " + props.model.users[props.model.currentUser - 1].email + "!";
             if (props.model.users[props.model.currentUser - 1].upvoteCount === 1) {
                 votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvote.";
+                secondMessage = "You can undo your upvote below.";
             }
 
-            if (props.model.users[props.model.currentUser - 1].upvoteCount === 0) {
+           else if (props.model.users[props.model.currentUser - 1].upvoteCount === 0) {
                 votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvotes."; //<br/> 
                 secondMessage = "Please upvote a video for it to show on this page.";
             }
-            if (props.model.users[props.model.currentUser - 1].upvoteCount > 1)
-            {
+            else if (props.model.users[props.model.currentUser - 1].upvoteCount > 1) {
                 votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvotes.";
+                secondMessage = "You can undo your upvotes below.";
+
             }
             if (props.model.users[props.model.currentUser - 1].upvoteCount > 0) {
                 games = props.model.users[props.model.currentUser - 1].upvotedGames;
@@ -47,7 +49,7 @@ function MyAccount(props) {
                 My account</h1>
 
             <div type='text' className='infoText'>{message}</div>
-            <div className="infoText">{votingMessage}<br/>{secondMessage}</div>
+            <div className="infoText">{votingMessage}<br />{secondMessage}</div>
             <div className={voteClass}>
                 Upvoted games by me
             </div>
@@ -64,8 +66,7 @@ function MyAccount(props) {
                                     <tr key={key1++}>
                                         <td> <a href={opt.url} target="_blank">{opt.title}</a> </td>
                                         <td> {opt.date.slice(0, 10)} </td>
-                                        <td> <button onClick={e => props.model.deleteUpvote(opt)}>X</button> </td>
-
+                                        <td> <button onClick={e => props.onDeleteClick(opt)}>X</button> </td>
                                     </tr>
                                 )
                             }
