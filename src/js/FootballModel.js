@@ -1,6 +1,6 @@
 
 class FootballModel {
-  constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, allMatches = null, user = null/* user? */) {
+  constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, allMatches = null, users = []) {
     this.highlights = highlights;
     this.upVoted = upVoted;
     this.popular = popular;
@@ -8,7 +8,7 @@ class FootballModel {
     this.allMatches = allMatches;
     this.observers = observers;
     this.currentUser = null;
-    this.users = [];
+    this.users = users;
   }
 
   selectCompetition(comp) {
