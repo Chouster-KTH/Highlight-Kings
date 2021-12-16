@@ -189,7 +189,7 @@ class FootballModel {
     newUser.email = email;
     newUser.password = password;
     newUser.upvoteCount = 0;
-    newUser.upvotedGames = []; //Save upvoted games for each user
+    newUser.upvotedGames = [1]; //Save upvoted games for each user
     this.users.push(newUser);
     this.logInUser(email, password);
     return "";
@@ -279,7 +279,15 @@ class FootballModel {
     newGame.title = props.title;
     newGame.date = props.date;
     newGame.url = props.matchviewUrl;
+    if (this.users[this.currentUser - 1].upvoteCount === 0){
+      this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
+      this.users[this.currentUser - 1].upvotedGames.pop();
+    }
+    
+    else {
     this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
+    }
+    console.log(this.users[this.currentUser - 1].upvotedGames);
     this.users[this.currentUser - 1].upvoteCount++;
     return true;
   }

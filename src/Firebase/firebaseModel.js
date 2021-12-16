@@ -7,11 +7,10 @@ function persistModel(model){
         if (loadingFromFirebase) {
 			return;
 		}
-        console.log(model.testValue)
+        console.log(model.users);
         firebase.database().ref(REF).set({
-            testValue2 : model.testValue,
-            testValue3 : 5,
-            upVoted : model.upVoted
+            upVoted : model.upVoted,
+            users: model.users
         }
         );
     });
@@ -20,7 +19,8 @@ function persistModel(model){
         loadingFromFirebase = true;
 		console.log("Retrieving data...");
 		if (data.val()) {
-			model.upVoted = data.val().upVoted;
+			model.upVoted = data.val().upVoted || [];
+            model.users = data.val().users || [];
 		}
 		loadingFromFirebase = false;
 	});

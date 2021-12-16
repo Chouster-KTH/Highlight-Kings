@@ -39,7 +39,6 @@ function LatestHighlights(props) {
                         <p className="highlight-header">{highLight.title}</p>
                         <div className="votingButtons">
                             <img src={upvote} alt = "up" onClick={() => props.addUpVote(highLight)} width="25" height="25" />
-                            <img src={downvote} alt = "down" onClick={event => console.log("User downvoted game: " + highLight.title)} width="25" height="25" />
                         </div>
                         <div className="iframeContainer">
                             <iframe src={highLight.videos[0].embed.substring(90, 185)} title={highLight.title} frameBorder="0" allow="autoplay; fullscreen"></iframe>
@@ -64,6 +63,7 @@ function LatestHighlights(props) {
         </div>
     );
 }
+
 
 export default LatestHighlights;
 
