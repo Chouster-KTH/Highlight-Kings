@@ -279,21 +279,31 @@ class FootballModel {
     newGame.title = props.title;
     newGame.date = props.date;
     newGame.url = props.matchviewUrl;
-    if (this.users[this.currentUser - 1].upvoteCount === 0){
+    /*if (this.users[this.currentUser - 1].upvoteCount === 0){
       this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
       this.users[this.currentUser - 1].upvotedGames.pop();
+      console.log("text " + this.users[this.currentUser - 1].upvotedGames.length);
     }
     
     else {
     this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
-    }
+    }*/
+    this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
     console.log(this.users[this.currentUser - 1].upvotedGames);
+    
     this.users[this.currentUser - 1].upvoteCount++;
     return true;
   }
 
   //Return true if the game has previously been upvoted by the user
   gameHasAlreadyBeenUpvotedByUser(props) {
+    if(this.users[this.currentUser - 1].upvotedGames === undefined || this.users[this.currentUser - 1].upvotedGames === null)
+    {      
+      //console.log("THE ARRAY IS EMPTY!!!!") //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      this.users[this.currentUser - 1].upvotedGames = [];
+      
+    }
+
     let hasBeenUpvoted = false;
     this.users[this.currentUser - 1].upvotedGames.forEach(element => {
       if (element.title === props.title)
