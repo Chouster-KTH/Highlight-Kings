@@ -2,6 +2,8 @@ import '../css/latestHighlights.css'
 
 import upvote from '../images/upvote.png';
 import downvote from '../images/downvote.png';
+import up from '../images/up.png';
+import neu from '../images/neu.png';
 
 
 
@@ -27,7 +29,16 @@ function LatestHighlights(props) {
             hlArray = hlArrayFull.slice(0,20);
             console.log("invalid pageNr, rendering 20 latest highlights");
     }
-    
+    function checkIfUpVoted(hl){
+        var found = false;
+        for(var i = 0; i < props.upvoted.length; i++){
+            if(props.upvoted[i].title == hl.title){
+                found = true;
+                break;
+            }
+        }
+        return found;
+    }
     return (
         <div className="latestHighlights">
             <h1 className="latestHighlights-header">
@@ -38,7 +49,7 @@ function LatestHighlights(props) {
                     <div className="highlights" key={index}>
                         <p className="highlight-header">{highLight.title}</p>
                         <div className="votingButtons">
-                            <img src={upvote} alt = "up" onClick={() => props.addUpVote(highLight)} width="25" height="25" />
+                            <img src={checkIfUpVoted(highLight) ? up : neu} alt = "up" onClick={() => {props.addUpVote(highLight); console.log(props.upvoted);}} width="40" height="40" />
                         </div>
                         <div className="iframeContainer">
                             <iframe src={highLight.videos[0].embed.substring(90, 185)} title={highLight.title} frameBorder="0" allow="autoplay; fullscreen"></iframe>
@@ -53,10 +64,10 @@ function LatestHighlights(props) {
                 ))}
                 <div className="pageControls">
                     <button className="pageButton" onClick={e=>{props.pageChange(props.pageNr - 1); console.log(props.pageNr - 1)}}><a href="#top">Back</a></button>
-                    <a href="#top" onClick={e=>{props.pageChange(1); console.log(1)}}>1</a>
-                    <a href="#top" onClick={e=>{props.pageChange(2); console.log(2)}}>2</a>
-                    <a href="#top" onClick={e=>{props.pageChange(3); console.log(3)}}>3</a>
-                    <a href="#top" onClick={e=>{props.pageChange(4); console.log(4)}}>4</a>
+                    <a href="#top" onClick={e=>{props.pageChange(1);}}>1</a>
+                    <a href="#top" onClick={e=>{props.pageChange(2);}}>2</a>
+                    <a href="#top" onClick={e=>{props.pageChange(3);}}>3</a>
+                    <a href="#top" onClick={e=>{props.pageChange(4);}}>4</a>
                     <button className="pageButton" onClick={e=>{props.pageChange(props.pageNr + 1); console.log(props.pageNr + 1)}}><a href="#top">Next</a></button>
                 </div>
             </div>
