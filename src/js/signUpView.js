@@ -13,7 +13,7 @@ function SignUp(props) {
                 <img src={Logo} alt="Highlight Kings" />
             </div>
             <h1 className="signUp-header">
-                Sign up for free</h1>
+                Sign up for free (do not use your real email and password)</h1>
             <div className="b">
                 <div className="message">{props.message}</div>
                 <div className="c">

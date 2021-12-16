@@ -13,7 +13,7 @@ return (
         <h2 className = "homePage-text">
             Use the sidebar to navigate. 
             <br></br>
-            On this page, most upvoted highlights can be seen (under construction).
+            On this page, most upvoted highlights can be seen.
         </h2>
         <div className="upvoted-grid">
                 {props.upVoted.map((highLight, index) => (
