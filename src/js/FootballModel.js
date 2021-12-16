@@ -287,7 +287,13 @@ class FootballModel {
   upvoteInformationUpdateForCurrentUser(props) {
     let newGame = {};
     newGame.title = props.title;
-    newGame.date = props.date;
+    if (props.date === null || typeof (props.date) === "undefined" || props.date === undefined) {
+      newGame.date = "No data..................";
+    }
+    else {
+      newGame.date = props.date;
+    }
+
     newGame.url = props.matchviewUrl;
     /*if (this.users[this.currentUser - 1].upvoteCount === 0){
       this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
