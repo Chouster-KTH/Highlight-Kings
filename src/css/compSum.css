@@ -1,10 +1,18 @@
 .compSummary {
-  padding-left: 300px;
+  padding-left: 163px;
   padding-bottom: 20px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   text-align: center;
+}
+
+.compSummary h1 {
+  font-family: "Enriqueta", arial, serif;
+  display: inline-block;
+  background-color: #04aa6d;
+  width: 100%;
+  color: white;
 }
 .compSummary table {
   border-spacing: 0px 20px;
@@ -12,22 +20,61 @@
 }
 
 .compSummary td {
-  background-color: rgb(202, 200, 200);
   border: 1px solid black;
   font-size: 20px;
 }
 
-.compSummary th {
-  background: #5dcce7;
-  color: white;
-  font-size: 50px;
-  text-align: center;
+.compSummary tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
+.compSummary span {
+  float: center;
+}
+
+.compSummary th {
+  font-size: 22px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
+}
+
+.sumButton {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.sumButton:hover {
+  background-color: green;
+}
+
 #tDates {
   font-size: 16px;
   font-weight: bold;
 }
 
 #teamsTable {
-  text-align: center;
+  width: 600px;
+}
+
+#leftTeam {
+  float: left;
+}
+
+#rightTeam {
+  float: right;
+}
+
+#tScore {
+  font-size: 25px;
+  width: 105px;
 }

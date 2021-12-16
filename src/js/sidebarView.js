@@ -28,9 +28,7 @@ function SideBar(props) {
       <div id="sideTop">
         <Link to="/home">Home</Link>
         <Link to="/highlights">Highlights</Link>
-        <Link to="/competitions">Competitions</Link>
-        <a href="/latest games">Coming soon</a>
-        <a href="/upcoming games">Coming soon</a>
+        <Link to="/competitions">Matches</Link>
       </div>
 
       <div className="sideFooter">
