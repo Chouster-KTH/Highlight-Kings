@@ -15,7 +15,7 @@ function HomePagePresenter (props){
     return (
         <HomePage 
         upVoted={upVoted} 
-        addUpVote = {upvoted => props.model.addUpVote(upvoted)}/>
+        addUpVote = {upvotedGame => {props.model.addUpVote(upvotedGame); setUpVoted(props.model.upVoted)}}/>
         );
 }
 
