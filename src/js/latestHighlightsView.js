@@ -10,6 +10,8 @@ import neu from '../images/neu.png';
 
 
 function LatestHighlights(props) {
+    if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined)
+        props.setUpvoted();
     const hlArrayFull = props.highlights.response;
     var hlArray;
     switch(props.pageNr){
