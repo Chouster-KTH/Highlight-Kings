@@ -1,4 +1,4 @@
-import '../css/comp.css'
+import '../css/compMatch.css'
 import '../css/sidebar.css'
 import {Link} from 'react-router-dom';
 
@@ -7,20 +7,19 @@ function Competitions(props){
   var compArr = props.comps.competitions.filter((cmp) => ids.includes(cmp.id) );
 return(<div className ="comps">
   <ul>
-  <h1>Competitions
-  <div id ="subText">Click on a competition name or image to retrieve match info</div>
-  </h1>
+  <h1>Scheduled - Competitions</h1>
+    <div id ="subText">Click on a competition name or image to retrieve info about matches</div>
   
     {
     compArr.map(function(x){return[
       <div key ={x.id} onClick={e=>{props.chosenComp(x)}}>
-        <Link className = "compLink" to = "/matches">
-      <img src = {x.area.ensignUrl} height = {100}/>
-    <li>
-      {x.id === 2014 ? "La Liga" : x.name}
-    </li>
-    </Link>
-    </div>
+        <Link className = "compLink" to = "/comp-schedules/matches">
+        <img src = {x.area.ensignUrl} height = {100}/>
+          <li>
+          {x.id === 2014 ? "La Liga" : x.name}
+          </li>
+        </Link>
+      </div>
     ];}
     )
     }

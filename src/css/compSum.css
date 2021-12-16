@@ -78,3 +78,7 @@
   font-size: 25px;
   width: 105px;
 }
+
+#live {
+  color: red;
+}

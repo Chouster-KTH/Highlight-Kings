@@ -35,7 +35,7 @@ const CompSumPresenter = ({ model, }) => {
   }, [model])
 
   if (!model.currentComp) {
-    return <Navigate to="/competitions" />
+    return <Navigate to="/comp-schedules" />
   }
 
   return (

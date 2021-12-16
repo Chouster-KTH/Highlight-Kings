@@ -14,7 +14,7 @@ import MyAccountPresenter from './js/presenters/myAccountPresenter';
 import CompSumPresenter from './js/presenters/compSummaryPresenter';
 import LatestHighlightsPresenter from './js/presenters/latestHighlightsPresenter';
 import HomePagePresenter from './js/presenters/homePagePresenter';
-
+import CompStandsPresenter from './js/presenters/competitionStandPresenter';
 
 
 
@@ -47,8 +47,9 @@ function App(props) {
           <Route path="/home" element={<HomePagePresenter model={props.model} />} />
           <Route path="/" element={<HomePagePresenter model={props.model} />} />
           <Route path="/highlights" element={<LatestHighlightsPresenter model={props.model} />} />
-          <Route path="/competitions" element={<CompetitionPresenter model={props.model} />} ></Route>
-          <Route path="/matches" element={<CompSumPresenter model={props.model} />}></Route>
+          <Route path="/comp-schedules" element={<CompetitionPresenter model={props.model} />} ></Route>
+          <Route path="/comp-standings" element={<CompStandsPresenter model={props.model} />}></Route>
+          <Route path="/comp-schedules/matches" element={<CompSumPresenter model={props.model} />}></Route>
           <Route path="/aboutUs" element={<AboutUs />}> </Route>
           <Route path="/myAccount" element={<MyAccountPresenter model={props.model} />}> </Route>
           <Route path="/signIn" element={<SignInPresenter model={props.model} />}> </Route>
