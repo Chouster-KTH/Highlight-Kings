@@ -132,6 +132,7 @@ class FootballModel {
       let index = this.upVoted.indexOf(item);
       if (this.upVoted[index].upVotes > 0) {
         this.upVoted[index].upVotes--;
+        this.filterUpVote();
         this.sortUpVote();
       }
       else {
@@ -165,6 +166,15 @@ class FootballModel {
     }
 
     this.notifyObservers(); //Should skip if if not in menu
+  }
+
+
+  //Remove videos from homepage that have no upvotes
+  filterUpVote() {
+    this.upVoted = Object.values(this.upVoted).filter(removeFilter);
+    function removeFilter(item) {
+      return item.upVotes > 0;
+    }
   }
 
 
@@ -290,18 +300,17 @@ class FootballModel {
     }*/
     this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
     console.log(this.users[this.currentUser - 1].upvotedGames);
-    
+
     this.users[this.currentUser - 1].upvoteCount++;
     return true;
   }
 
   //Return true if the game has previously been upvoted by the user
   gameHasAlreadyBeenUpvotedByUser(props) {
-    if(this.users[this.currentUser - 1].upvotedGames === undefined || this.users[this.currentUser - 1].upvotedGames === null)
-    {      
+    if (this.users[this.currentUser - 1].upvotedGames === undefined || this.users[this.currentUser - 1].upvotedGames === null) {
       //console.log("THE ARRAY IS EMPTY!!!!") //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       this.users[this.currentUser - 1].upvotedGames = [];
-      
+
     }
 
     let hasBeenUpvoted = false;
