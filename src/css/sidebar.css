@@ -1,20 +1,22 @@
 .sideBar {
   position: fixed;
-  font-family: Roboto;
+  font-family: "Enriqueta", arial, serif;
+  /*font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
+  font-weight: normal;*/
   width: 163px;
   height: 100%;
   left: 0px;
   top: 0px;
-  overflow: scroll;
-
-  background: #bfbfbf;
+  overflow: hidden;
+  
+  background: #04aa6d;
+  border-right: 4px solid black;
 }
 
 .sideBar a {
   text-decoration: none;
-  color: black;
+  color: white;
   display: block;
   padding: 6px 8px 6px 16px;
   font-size: 18px;

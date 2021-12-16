@@ -26,8 +26,8 @@
     margin: 20px;
     display: grid;
     grid-template-areas:
-        'title title title'/*title title' */
-        'left right data';/*right right cj';*/
+        'title title title'
+        'left right data';
     grid-template-columns: 15% 60% auto;
 }
 
@@ -43,9 +43,9 @@
 {
     height: 60vh;
     grid-area: left;
-    text-align: right;
-    width: 25px;
-    padding-left: 80%;
+    text-align: center;
+    /*width: 25px;*/
+    /*padding-left: 80%;*/
 }
 
 .iframeContainer{
@@ -82,4 +82,8 @@
     color: black;
     
     padding: 8px;
+}
+.upvImg{
+    width:50%;
+    margin-top: 50%;
 }

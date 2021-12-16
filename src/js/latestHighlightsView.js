@@ -33,10 +33,12 @@ function LatestHighlights(props) {
     }
     function checkIfUpVoted(hl){
         var found = false;
-        for(var i = 0; i < props.upvoted.length; i++){
-            if(props.upvoted[i].title == hl.title){
-                found = true;
-                break;
+        if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined){
+            for(var i = 0; i < props.upvoted.length; i++){
+                if(props.upvoted[i].title == hl.title){
+                    found = true;
+                    break;
+                }
             }
         }
         return found;
@@ -51,7 +53,7 @@ function LatestHighlights(props) {
                     <div className="highlights" key={index}>
                         <p className="highlight-header">{highLight.title}</p>
                         <div className="votingButtons">
-                            <img src={checkIfUpVoted(highLight) ? up : neu} alt = "up" onClick={() => {props.addUpVote(highLight); console.log(props.upvoted);}} width="40" height="40" />
+                            <img src={checkIfUpVoted(highLight) ? up : neu} className="upvImg" alt = "up" onClick={() => {props.addUpVote(highLight); console.log(props.upvoted);}}/>
                         </div>
                         <div className="iframeContainer">
                             <iframe src={highLight.videos[0].embed.substring(90, 185)} title={highLight.title} frameBorder="0" allow="autoplay; fullscreen"></iframe>

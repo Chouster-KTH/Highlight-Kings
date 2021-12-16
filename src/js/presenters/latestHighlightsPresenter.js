@@ -24,7 +24,7 @@ function LatestHighlightsPresenter(props){
     upvoted = {upvoted}
     model={props.model}
     setUpvoted = {()=>addUpvoted(props.model.users[props.model.currentUser - 1].upvotedGames)}
-    addUpVote = {upvoted => {props.model.addUpVote(upvoted);addUpvoted(props.model.users[props.model.currentUser - 1].upvotedGames);}}/>}
+    addUpVote = {upvoted => {props.model.addUpVote(upvoted);if(props.model.users[props.model.currentUser - 1] !== undefined)addUpvoted(props.model.users[props.model.currentUser - 1].upvotedGames);}}/>}
     </React.Fragment>);
 }
 
