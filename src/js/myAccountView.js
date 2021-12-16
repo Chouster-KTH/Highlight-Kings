@@ -23,7 +23,7 @@ function MyAccount(props) {
                 secondMessage = "You can undo your upvote below.";
             }
 
-           else if (props.model.users[props.model.currentUser - 1].upvoteCount === 0) {
+            else if (props.model.users[props.model.currentUser - 1].upvoteCount === 0) {
                 votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvotes."; //<br/> 
                 secondMessage = "Please upvote a video for it to show on this page.";
             }
@@ -35,7 +35,7 @@ function MyAccount(props) {
             if (props.model.users[props.model.currentUser - 1].upvoteCount > 0) {
                 games = props.model.users[props.model.currentUser - 1].upvotedGames;
                 voteClass = "myUpvotedGames";
-                tableClass = "listOfGames";
+                tableClass = "styled-table";
             }
         }
 
@@ -55,19 +55,23 @@ function MyAccount(props) {
             </div>
             <div className="listOfGames">
                 <table className={tableClass}>
-                    <tbody>
-                        <tr>
-                            <th>Game</th>
-                            <th>Date played</th>
-                        </tr>
+                   
+                        <thead>
+                            
+                            <tr>
+                                <th>Game</th>
+                                <th>Date played</th><th></th>
+                            </tr></thead> <tbody>
                         {games.map(
                             function (opt) {
                                 return (
-                                    <tr key={key1++}>
+                                    <tr key={key1++} className="active-row">
                                         <td> <a href={opt.url} target="_blank">{opt.title}</a> </td>
                                         <td> {opt.date.slice(0, 10)} </td>
-                                        <td> <button onClick={e => props.onDeleteClick(opt)}>X</button> </td>
+                                        <td> <button onClick={e => props.onDeleteClick(opt)}>x</button> </td>
+
                                     </tr>
+
                                 )
                             }
                         )}</tbody></table></div>
@@ -79,3 +83,29 @@ function MyAccount(props) {
 
 
 export default MyAccount;
+
+
+/*
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Dom</td>
+            <td>6000</td>
+        </tr>
+        <tr class="active-row">
+            <td>Melissa</td>
+            <td>5150</td>
+        </tr>
+        <!-- and so on... -->
+    </tbody>
+</table>
+
+
+*/
