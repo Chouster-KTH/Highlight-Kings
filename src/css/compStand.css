@@ -1,0 +1,36 @@
+.compStand {
+  padding-left: 163px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+}
+
+.compStand h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
+}
+
+.compStand table {
+  border-spacing: 0px 20px;
+  margin: auto;
+}
+
+.compStand td {
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+.compStand th {
+  font-weight: normal;
+  font-size: 22px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
+}

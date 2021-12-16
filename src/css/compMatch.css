@@ -1,0 +1,42 @@
+.comps {
+  padding-left: 100px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+}
+
+.comps h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+  background-color: #04aa6d;
+}
+.comps ul {
+  list-style-type: none;
+}
+.comps li {
+  padding-top: 10px;
+  padding-bottom: 50px;
+  margin: 0;
+  font-size: x-large;
+  font-weight: bolder;
+}
+.compLink {
+  text-decoration: none;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+}
+
+#subText {
+  font-size: 20px;
+  font-weight: normal;
+  padding-bottom: 25px;
+}
+#live {
+  color: red;
+}
