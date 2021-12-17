@@ -5,7 +5,7 @@ import LatestHighlights from '../latestHighlightsView';
 
 function LatestHighlightsPresenter(props){
   const [hLight, setHLight] = useState(null);
-  const [upvoted, addUpvoted] = useState([]);//useState(props.model.users[props.model.currentUser - 1].upvotedGames);
+  const [upvoted, addUpvoted] = useState([]);
   const [page, setPage] = useState(1);
   
   useEffect(()=>{

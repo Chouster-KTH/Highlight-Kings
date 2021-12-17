@@ -6,19 +6,16 @@ function HomePage(props){
 return (
     <div className = "homePage">
         <img src = {Logo} alt = "logo"/>
-    
         <h1 className = "homePage-header">
             Welcome
         </h1>
         <h2 className = "homePage-text">
-            Use the sidebar to navigate. 
-            <br></br>
-            On this page, most upvoted highlights can be seen.
+            On this page, most popular highlights can be seen.
         </h2>
         <div className="upvoted-grid">
                 {props.upVoted.map((highLight, index) => (
                     <div className="upvoted" key={index}>
-                        <p className="upvoted-header">{highLight.title}</p>
+                        <p className="upvoted-header">{highLight.title} {"("+highLight.date.slice(0, 10)+")"}</p>
                         <p className="numberOfUpvotes">
                             <img src={upvote} alt = "up" onClick={() => props.addUpVote(highLight)} width="25" height="25" />  
                             {"Upvoted: "+ highLight.upVotes +" times"}
