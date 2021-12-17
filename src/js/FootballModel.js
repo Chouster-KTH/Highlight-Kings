@@ -295,7 +295,7 @@ class FootballModel {
     }
 
     newGame.url = props.matchviewUrl;
-    /*if (this.users[this.currentUser - 1].upvoteCount === 0){
+    if (this.users[this.currentUser - 1].upvoteCount === 0){
       this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
       this.users[this.currentUser - 1].upvotedGames.pop();
       console.log("text " + this.users[this.currentUser - 1].upvotedGames.length);
@@ -303,8 +303,8 @@ class FootballModel {
     
     else {
     this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
-    }*/
-    this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
+    }
+    /*this.users[this.currentUser - 1].upvotedGames.unshift(newGame);*/
     console.log(this.users[this.currentUser - 1].upvotedGames);
 
     this.users[this.currentUser - 1].upvoteCount++;
