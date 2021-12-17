@@ -54,6 +54,7 @@ function LatestHighlights(props) {
                         <p className="highlight-header">{highLight.title}</p>
                         <div className="votingButtons">
                             <img src={checkIfUpVoted(highLight) ? up : neu} className="upvImg" alt = "up" onClick={() => {props.addUpVote(highLight); console.log(props.upvoted);}}/>
+                            <i>Upvote</i>
                         </div>
                         <div className="iframeContainer">
                             <iframe src={highLight.videos[0].embed.substring(90, 185)} title={highLight.title} frameBorder="0" allow="autoplay; fullscreen"></iframe>

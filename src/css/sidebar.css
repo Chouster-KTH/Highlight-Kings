@@ -25,7 +25,9 @@
 
   text-align: center;
 }
-
+.sideBar a:hover{
+  font-size: larger;
+}
 .sideLink {
   text-decoration: none;
   color: black;

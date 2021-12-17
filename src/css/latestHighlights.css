@@ -1,17 +1,20 @@
 .latestHighlights{
     padding-left: 165px;
-    font-family: Roboto;
+    font-family: "Enriqueta", arial, serif;
     font-style: normal;
     font-weight: normal;
     text-align: center; 
+    overflow-x: hidden;
 }
 
 .latestHighlights-header{
-    background-color: whitesmoke;
-    font-family: Roboto;
+    color: white;
+    background-color: #04aa6d;
+    font-family: "Enriqueta", arial, serif;;
     font-style: normal;
     font-weight: normal;
     text-align: center;
+    padding:20px 0;
 }
 
 .highlights-grid{
@@ -58,22 +61,32 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
+    box-shadow: 10px 10px 10px black;
 }
 .matchData{
     grid-area: data;
-    background-color: lightgreen;
+    background-color: #04aa6d;
+    color: white ;
     border-radius: 20px;
+    width: 90%;
+    margin: 0 5%;
+}
+.pageControls{
+    padding-bottom: 20px;
 }
 .pageControls > .pageButton{
     padding: 10px 15px;
     color: black;
     font-weight: bolder;
-    background-color: lightgreen;
+    background-color: #04aa6d;
     border-radius: 8px;
 }
 .pageButton > a{
     font-weight: bolder;
     color: black;
+}
+.pageButton > a:hover{
+    font-size: 110%;
 }
 .pageControls > a{
     font-family:'Courier New', Courier, monospace;
@@ -83,7 +96,19 @@
     
     padding: 8px;
 }
+.pageControls > a:hover{
+    font-size: 110%;
+}
 .upvImg{
     width:50%;
     margin-top: 50%;
+}
+.upvImg:hover{
+    width: 55%;
+}
+.upvImg:hover + i{
+    display: block;
+}
+.votingButtons > i{
+    display: none;
 }
