@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MatchSource from '../apiSource/matchSource';
-import Competitions from '../competitionView'
+import CompetitionMatches from '../competitionMatchView'
 
 
 function CompetitionMatchPresenter(props){
@@ -17,7 +17,7 @@ function CompetitionMatchPresenter(props){
   
 
   return (<React.Fragment>
-    {comp && <Competitions 
+    {comp && <CompetitionMatches 
     comps = {comp} 
     chosenComp = {comp=>props.model.selectCompetition(comp)}/>}
     </React.Fragment>);
