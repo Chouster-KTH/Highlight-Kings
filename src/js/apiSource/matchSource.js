@@ -20,9 +20,8 @@ const MatchSource =  {
     }
     ,
     getFromDate(id, startDate, endDate){
-        console.log(id, startDate, endDate);
     return MatchSource.compCall(id+"/matches?dateFrom="+startDate+"&dateTo=" +endDate)
-        .then(data => console.log(data));
+        .then(data => data);
     }
     ,
     getFromStatus(id, status){

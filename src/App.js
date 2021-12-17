@@ -5,16 +5,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './js/homePageView';
 import SideBar from './js/sidebarView';
 import AboutUs from './js/aboutUsView';
-import CompetitionPresenter from './js/presenters/competitionPresenter';
+import CompetitionMatchPresenter from './js/presenters/competitionMatchPresenter';
 //import SignIn from './js/signInView';
 //import SignUp from './js/signUpView';
 import SignInPresenter from './js/presenters/signInPresenter';
 import SignUpPresenter from './js/presenters/signUpPresenter';
 import MyAccountPresenter from './js/presenters/myAccountPresenter';
-import CompSumPresenter from './js/presenters/compSummaryPresenter';
+import MatchPresenter from './js/presenters/matchPresenter';
 import LatestHighlightsPresenter from './js/presenters/latestHighlightsPresenter';
 import HomePagePresenter from './js/presenters/homePagePresenter';
 import CompStandsPresenter from './js/presenters/competitionStandPresenter';
+import StandingsPresenter from './js/presenters/standingsPresenter';
 
 
 
@@ -47,9 +48,10 @@ function App(props) {
           <Route path="/home" element={<HomePagePresenter model={props.model} />} />
           <Route path="/" element={<HomePagePresenter model={props.model} />} />
           <Route path="/highlights" element={<LatestHighlightsPresenter model={props.model} />} />
-          <Route path="/comp-schedules" element={<CompetitionPresenter model={props.model} />} ></Route>
+          <Route path="/comp-schedules" element={<CompetitionMatchPresenter model={props.model} />} ></Route>
           <Route path="/comp-standings" element={<CompStandsPresenter model={props.model} />}></Route>
-          <Route path="/comp-schedules/matches" element={<CompSumPresenter model={props.model} />}></Route>
+          <Route path="/comp-schedules/matches" element={<MatchPresenter model={props.model} />}></Route>
+          <Route path="/comp-standings/standing" element={<StandingsPresenter model={props.model} />}></Route>
           <Route path="/aboutUs" element={<AboutUs />}> </Route>
           <Route path="/myAccount" element={<MyAccountPresenter model={props.model} />}> </Route>
           <Route path="/signIn" element={<SignInPresenter model={props.model} />}> </Route>

@@ -12,6 +12,7 @@ class FootballModel {
   }
 
   selectCompetition(comp) {
+  
     this.currentComp = comp;
   }
 
@@ -20,7 +21,8 @@ class FootballModel {
   }
 
   findMatches(teamName, type) {
-    let matches = this.allMatches.matches.filter(mtch => mtch.homeTeam.name.includes(teamName) || mtch.awayTeam.name.includes(teamName));
+    let caseSense = teamName.toLowerCase();
+    let matches = this.allMatches.matches.filter(mtch => mtch.homeTeam.name.toLowerCase().includes(caseSense) || mtch.awayTeam.name.toLowerCase().includes(caseSense));
     if (type === "ALL") {
       return matches;
     } else {

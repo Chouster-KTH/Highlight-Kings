@@ -16,7 +16,8 @@
 }
 
 .compStand table {
-  border-spacing: 0px 20px;
+  border-collapse: separate;
+  border-spacing: 0px 35px;
   margin: auto;
 }
 

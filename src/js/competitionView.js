@@ -14,7 +14,7 @@ return(<div className ="comps">
     compArr.map(function(x){return[
       <div key ={x.id} onClick={e=>{props.chosenComp(x)}}>
         <Link className = "compLink" to = "/comp-schedules/matches">
-        <img src = {x.area.ensignUrl} height = {100}/>
+        <img src = {x.area.ensignUrl} alt="Country flag" height = {100}/>
           <li>
           {x.id === 2014 ? "La Liga" : x.name}
           </li>

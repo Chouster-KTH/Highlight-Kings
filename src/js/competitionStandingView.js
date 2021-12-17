@@ -1,8 +1,7 @@
 import '../css/compStand.css'
-import '../css/compSum.css'
+import '../css/matches.css'
 import '../css/sidebar.css'
 import {Link} from 'react-router-dom';
-const route = <Link className = "compLink" to = "/comp-standings/standing"></Link>
 
 function CompetitionStanding(props){
   const ids = [2019, 2002, 2015, 2003, 2017, 2014, 2021];
@@ -32,8 +31,8 @@ return(<div className ="compStand">
     {
     compArr.map(function(x){return[
       <tr key ={x.id}>
-          <td>
-          <img src = {x.area.ensignUrl} height = {35}/>
+          <td width={85}>
+          <img src = {x.area.ensignUrl} alt="Country flag" height = {35}/>
           </td>
           <td>
           {x.id === 2014 ? "La Liga" : x.name}
@@ -45,7 +44,9 @@ return(<div className ="compStand">
           {x.currentSeason.endDate}
           </td>
           <td>
-            <button className = "sumButton">More info</button>
+            <Link className = "compLink" to = "/comp-standings/standing">
+            <button className = "mButton" onClick={()=>{props.chosenComp(x)}} >Get table</button>
+            </Link>
           </td>
     </tr>
     ];}

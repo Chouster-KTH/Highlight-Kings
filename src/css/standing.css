@@ -1,0 +1,50 @@
+.stand {
+  padding-left: 163px;
+  font-family: "Enriqueta", arial, serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+}
+
+.stand h1 {
+  font-family: "Enriqueta", arial, serif;
+  display: inline-block;
+  background-color: #04aa6d;
+  width: 100%;
+  color: white;
+}
+.stand table {
+  margin: auto;
+  margin-top: 105px;
+  text-align: center;
+}
+
+.stand tr {
+  text-align: center;
+  font-size: 25px;
+  background-color: #c5e1a5;
+}
+
+.stand tr:nth-child(even) {
+  background-color: #dcedc8;
+}
+
+.stand th {
+  font-weight: normal;
+  font-size: 30px;
+  padding: 10px 12px;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
+}
+#teams {
+  float: left;
+}
+
+#pos {
+  color: green;
+}
+
+#neg {
+  color: red;
+}

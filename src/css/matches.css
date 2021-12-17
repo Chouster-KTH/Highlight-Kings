@@ -1,0 +1,84 @@
+.matches {
+  padding-left: 163px;
+  padding-bottom: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+}
+
+.matches h1 {
+  font-family: "Enriqueta", arial, serif;
+  display: inline-block;
+  background-color: #04aa6d;
+  width: 100%;
+  color: white;
+}
+.matches table {
+  border-spacing: 0px 20px;
+  margin: auto;
+}
+
+.matches td {
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+.matches tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.matches span {
+  float: center;
+}
+
+.matches th {
+  font-size: 22px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
+}
+
+.mButton {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.mButton:hover {
+  background-color: green;
+}
+
+#tDates {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#teamsTable {
+  width: 600px;
+}
+
+#leftTeam {
+  float: left;
+}
+
+#rightTeam {
+  float: right;
+}
+
+#tScore {
+  font-size: 25px;
+  width: 105px;
+}
+
+#live {
+  color: red;
+}
