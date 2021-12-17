@@ -62,7 +62,8 @@ function LatestHighlights(props) {
                         <div className="matchData">
                             <p>{highLight.title}</p>
                             <p>{highLight.competition}</p>
-                            <p>{["ENGLAND: Premier League","SPAIN: La Liga","FRANCE: Ligue 1","ITALY: Serie A","GERMANY: Bundesliga","NETHERLANDS: Eredivisie","PORTUGAL: Liga Portugal","CHAMPIONS LEAGUE"].includes(highLight.competition) ? "There is data" : "no data"}</p>
+                            <p>{["ENGLAND: Premier League","SPAIN: La Liga","FRANCE: Ligue 1","ITALY: Serie A","GERMANY: Bundesliga","NETHERLANDS: Eredivisie","PORTUGAL: Liga Portugal","CHAMPIONS LEAGUE"].includes(highLight.competition)}</p>
+                            {"DATE: "+ highLight.date.slice(0, 10)}
                         </div>
                         <br />
                     </div>
