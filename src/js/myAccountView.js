@@ -66,7 +66,7 @@ function MyAccount(props) {
                             function (opt) {
                                 return (
                                     <tr key={key1++} className="active-row">
-                                        <td> <a href={opt.url} target="_blank">{opt.title}</a> </td>
+                                       <div className = "game-link"> <td> <b><a href={opt.url} target="_blank">{opt.title}</a></b> </td></div>
                                         <td> {opt.date.slice(0, 10)} </td>
                                         <td> <button onClick={e => props.onDeleteClick(opt)}>x</button> </td>
 
@@ -84,28 +84,25 @@ function MyAccount(props) {
 
 export default MyAccount;
 
+/*
+
+<div className = "game-link"> <td> <a href={opt.url} target="_blank">{opt.title}</a> </td></div>
+
+*/
+
+
+
 
 /*
 
-<table class="styled-table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Points</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Dom</td>
-            <td>6000</td>
-        </tr>
-        <tr class="active-row">
-            <td>Melissa</td>
-            <td>5150</td>
-        </tr>
-        <!-- and so on... -->
-    </tbody>
-</table>
+
+ <tr key={key1++} className="active-row">
+                                       <p><b><a href={opt.url} target="_blank">{opt.title}</a></b></p>
+                                        <td> {opt.date.slice(0, 10)} </td>
+                                        <td> <button onClick={e => props.onDeleteClick(opt)}>x</button> </td>
+
+                                    </tr>
+
 
 
 */

@@ -119,4 +119,21 @@ button .icon {
 
 }
 
-  
+/*
+
+a:hover {
+	color: hotpink;
+  }
+  */
+/*
+  a:hover,
+  a:focus {
+	color: #eeff00;
+	text-decoration: underline;
+  }
+*/
+
+
+.footer :hover .game-link {
+	background-color: rgb(201, 115, 155);
+  }
