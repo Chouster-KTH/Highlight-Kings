@@ -66,9 +66,9 @@ function MyAccount(props) {
                             function (opt) {
                                 return (
                                     <tr key={key1++} className="active-row">
-                                       <div className = "game-link"> <td> <b><a href={opt.url} target="_blank">{opt.title}</a></b> </td></div>
+                                       <span title = "Upvoted game - link to ScoreBat"> <td> <b><a className = "url-link" href={opt.url} target="_blank">{opt.title}</a></b> </td></span>
                                         <td> {opt.date.slice(0, 10)} </td>
-                                        <td> <button onClick={e => props.onDeleteClick(opt)}>x</button> </td>
+                                        <span title = "Remove upvote"> <td> <button onClick={e => props.onDeleteClick(opt)}>x</button> </td></span>
 
                                     </tr>
 
