@@ -27,7 +27,7 @@ function Standings(props){
           return [
             <tr id = "tRow" key ={x.team.id}>
               <td>{x.position}</td>
-              <td id="teams"><img src ={x.team.crestUrl} alt="'team logo'" height={25}/>{x.team.name}</td>
+              <td  width="450"><img id="teams" src ={x.team.crestUrl} alt="'team logo'" height={25}/>{x.team.name}</td>
               <td>{x.playedGames}</td>
               <td>{x.won}</td>
               <td>{x.lost}</td>
