@@ -132,6 +132,9 @@ class FootballModel {
       let index = this.upVoted.indexOf(item);
       if (this.upVoted[index].upVotes > 0) {
         this.upVoted[index].upVotes--;
+        if (this.upVoted[index].upVotes === 0){
+          this.upVoted.splice(index, 1);
+        }
         this.filterUpVote();
         this.sortUpVote();
       }
@@ -165,6 +168,9 @@ class FootballModel {
       this.users[this.currentUser - 1].upvoteCount--;
     }
 
+    if (this.users[this.currentUser - 1].upvotedGames.length === 0){
+      this.users[this.currentUser - 1].upvotedGames = [1];
+    }
     this.notifyObservers(); //Should skip if if not in menu
   }
 
