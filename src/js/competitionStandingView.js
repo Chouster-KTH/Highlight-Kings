@@ -12,21 +12,11 @@ return(<div className ="compStand">
     <table>
       <tbody>
       <tr>
-        <th>
-          Country
-        </th>
-        <th>
-          Tournament 
-        </th>
-        <th>
-        Start
-        </th>
-        <th>
-        End
-        </th>
-        <th>
-          Standings
-        </th>
+        <th>Country</th>
+        <th>Tournament </th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Standings</th>
       </tr>
     {
     compArr.map(function(x){return[
