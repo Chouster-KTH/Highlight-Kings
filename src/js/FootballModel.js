@@ -12,7 +12,7 @@ class FootballModel {
   }
 
   selectCompetition(comp) {
-  
+
     this.currentComp = comp;
   }
 
@@ -56,8 +56,6 @@ class FootballModel {
       });
   }
 
-
-
   addUpVote(props) {
 
     //Check that the user is not signed out when voting
@@ -68,7 +66,8 @@ class FootballModel {
 
     //Check that the user does not upvote each game more than once
     if (this.gameHasAlreadyBeenUpvotedByUser(props)) {
-      alert("You can only upvote each game once!");
+      //alert("You can only upvote each game once!");
+      this.deleteUpvote(props);
       return this.upvotedGames;
     }
 
@@ -107,41 +106,24 @@ class FootballModel {
     }
   }
 
-  //removeUpVote(id) { }
-  addDownVote(id) { }
-  removeDownVote(id) { }
-  addToPopular(id) { }
-  removeFromPopular(id) { }
-
-
-
-
-
-
-
-
-
   deleteUpvote(props) {
 
-    console.log("User wants to delete an upvote: " + props.title);
     let item = this.upVoted.find(item => item.title === props.title);
 
     if (item === undefined) {
-      console.log("Item not found: " + props.title);
     }
 
     else {
       let index = this.upVoted.indexOf(item);
       if (this.upVoted[index].upVotes > 0) {
         this.upVoted[index].upVotes--;
-        if (this.upVoted[index].upVotes === 0){
+        if (this.upVoted[index].upVotes === 0) {
           this.upVoted.splice(index, 1);
         }
         this.filterUpVote();
         this.sortUpVote();
       }
       else {
-        console.log("ERROR: " + props.title + " has no votes. Number of votes cannot be decremented.");
       }
     }
     this.deleteUpvoteFromUsersArray(props);
@@ -154,7 +136,6 @@ class FootballModel {
     let itemToBeDeleted = this.users[this.currentUser - 1].upvotedGames.find(item => item.title === props.title);
 
     if (itemToBeDeleted === undefined) {
-      console.log("undefined");
       return;
 
     }
@@ -170,7 +151,7 @@ class FootballModel {
       this.users[this.currentUser - 1].upvoteCount--;
     }
 
-    if (this.users[this.currentUser - 1].upvotedGames.length === 0){
+    if (this.users[this.currentUser - 1].upvotedGames.length === 0) {
       this.users[this.currentUser - 1].upvotedGames = [1];
     }
     this.notifyObservers(); //Should skip if if not in menu
@@ -190,7 +171,6 @@ class FootballModel {
 
   //Register a new user
   addUser(email, password) {
-    console.log("User wants to sign up: email = " + email + ", password = " + password);
     if (this.getUserIndex(email) > 0) {
       return "User " + email + " is already registered";
     }
@@ -216,7 +196,6 @@ class FootballModel {
 
   //Sign in user
   logInUser(email, password) {
-    console.log("User wants to sign in: email = " + email + ", password = " + password);
 
     let index = this.getUserIndex(email);
     if (index > 0) {
@@ -303,14 +282,14 @@ class FootballModel {
     }
 
     newGame.url = props.matchviewUrl;
-    if (this.users[this.currentUser - 1].upvoteCount === 0){
+    if (this.users[this.currentUser - 1].upvoteCount === 0) {
       this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
       this.users[this.currentUser - 1].upvotedGames.pop();
       console.log("text " + this.users[this.currentUser - 1].upvotedGames.length);
     }
-    
+
     else {
-    this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
+      this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
     }
     /*this.users[this.currentUser - 1].upvotedGames.unshift(newGame);*/
     console.log(this.users[this.currentUser - 1].upvotedGames);
@@ -322,7 +301,6 @@ class FootballModel {
   //Return true if the game has previously been upvoted by the user
   gameHasAlreadyBeenUpvotedByUser(props) {
     if (this.users[this.currentUser - 1].upvotedGames === undefined || this.users[this.currentUser - 1].upvotedGames === null) {
-      //console.log("THE ARRAY IS EMPTY!!!!") //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       this.users[this.currentUser - 1].upvotedGames = [];
 
     }
@@ -340,16 +318,3 @@ class FootballModel {
 
 export default FootballModel;
 
-
-
-/*
-{title: 'Stuttgart - Bayern Munich', competition: 'GERMANY: Bundesliga', matchviewUrl: 'https://www.scorebat.com/embed/matchview/1058851/', competitionUrl: 'https://www.scorebat.com/embed/competition/germany-bundesliga/', thumbnail: 'https://www.scorebat.com/og/m/og1058851.jpeg', …}
-competition: "GERMANY: Bundesliga"
-competitionUrl: "https://www.scorebat.com/embed/competition/germany-bundesliga/"
-date: "2021-12-14T17:30:00+0000"
-matchviewUrl: "https://www.scorebat.com/embed/matchview/1058851/"
-thumbnail: "https://www.scorebat.com/og/m/og1058851.jpeg"
-title: "Stuttgart - Bayern Munich"
-videos: [{…}]
-
-*/

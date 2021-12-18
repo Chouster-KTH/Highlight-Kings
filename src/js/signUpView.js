@@ -1,19 +1,17 @@
 import Logo from '../images/logo.png';
 import '../css/signUp.css';
-import { Link } from 'react-router-dom';
 
 function SignUp(props) {
 
 
     return (
 
-        //<form>
         <div className='a'>
             <div id="p">
                 <img src={Logo} alt="Highlight Kings" />
             </div>
             <h1 className="signUp-header">
-                Sign up for free (do not use your real email and password)</h1>
+                Sign up for free</h1>
             <div className="b">
                 <div className="message">{props.message}</div>
                 <div className="c">
@@ -25,12 +23,14 @@ function SignUp(props) {
                     <label htmlFor="pass">Password (8 characters minimum): </label><br />
                     <input type="password" id="pass" name="password" minLength="8" required onInput={e => props.onPassword(e.target.value)}></input><br /><br />
                 </div>
-
-                <input type="submit" value="Sign up" onClick={e => props.onSubmit()}></input>
-                <h2 id="result"></h2>
+                <body>
+                    <input className="signUpButton" type="submit" value="Sign up" onClick={e => props.onSubmit()}></input>
+                </body>          <h2 id="result"></h2>
+            </div>
+            <div>
+                Already have an account? Sign in <a href="/signIn">here</a>.
             </div>
         </div>
-        //</form>
     )
 }
 
