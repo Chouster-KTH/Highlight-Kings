@@ -46,7 +46,7 @@ function MyAccount(props) {
                 <img src={Logo} alt="Highlight Kings" />
             </div>
             <h1 className="myAccount-content">
-                My account</h1>
+                My Account</h1>
 
             <div type='text' className='infoText'>{message}</div>
             <div className="infoText">{votingMessage}<br />{secondMessage}</div>
