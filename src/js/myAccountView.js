@@ -1,6 +1,7 @@
 import Logo from '../images/logo.png';
 import '../css/myAccount.css';
 
+
 function MyAccount(props) {
 
     let voteClass = "hidden";
@@ -23,7 +24,7 @@ function MyAccount(props) {
             }
 
             else if (props.model.users[props.model.currentUser - 1].upvoteCount === 0) {
-                votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvotes."; //<br/> 
+                votingMessage = "You have made " + props.model.users[props.model.currentUser - 1].upvoteCount + " upvotes."; 
                 secondMessage = "Please upvote a video for it to show on this page.";
             }
             else if (props.model.users[props.model.currentUser - 1].upvoteCount > 1) {
@@ -38,6 +39,7 @@ function MyAccount(props) {
             }
         }
 
+
     return (
         <div className='name'>
             <div id="pic">
@@ -49,7 +51,7 @@ function MyAccount(props) {
             <div type='text' className='infoText'>{message}</div>
             <div className="infoText">{votingMessage}<br />{secondMessage}</div>
             <div className={voteClass}>
-                Upvoted games by me
+                My upvoted games
             </div>
             <div className="listOfGames">
                 <table className={tableClass}>
@@ -73,10 +75,17 @@ function MyAccount(props) {
                                 )
                             }
                         )}</tbody></table></div>
+
+
+
+
+
         </div>
 
 
     )
 }
 
+
 export default MyAccount;
+

@@ -152,7 +152,7 @@ class FootballModel {
     if (this.users[this.currentUser - 1].upvotedGames.length === 0) {
       this.users[this.currentUser - 1].upvotedGames = [1];
     }
-    this.notifyObservers(); //Should skip if if not in menu
+    this.notifyObservers(); 
   }
 
 
