@@ -1,6 +1,6 @@
 # Project DH2642 - Highlight Kings
 ## [Highlight Kings on herokuapp](https://highlightkings.herokuapp.com/)
-**1. Description:** Highlight Kings is a football application which targets football lovers who want an easy and interactive way to enjoy football highlights. The application is simply a web page where users can enjoy football highlights. What makes the application special is that highlights can be upvoted/downvoted by the users. Users can watch highlights from several countries and leagues and rank them using the up/down-vote. The most upvoted highlights are saved in a leaderboard which the user can watch the highlights from, hence, the users can see if they agree or not with other users. In addition to the leaderboard, one can also choose to watch recent highlights. The website also includes features to list and watch fixtures (whole schedule of games to be played), from pre-selected leagues. With different search options for team and current match status, the user will be able to find a particular match in the current league. Another feature is to see the current standings of one of the pre-selected leagues.  
+**1. Description:** Highlight Kings is a football application which targets football lovers who want an easy and interactive way to enjoy football highlights. The application is simply a web page where users can enjoy football highlights. What makes the application special is that highlights can be upvoted by the users. Users can watch highlights from several countries and leagues and rank them using the up/down-vote. The most upvoted highlights are saved in a leaderboard which the user can watch the highlights from, hence, the users can see if they agree or not with other users. In addition to the leaderboard, one can also choose to watch recent highlights. The website also includes features to list and watch fixtures (whole schedule of games to be played), from pre-selected leagues. With different search options for team and current match status, the user will be able to find a particular match in the current league. Another feature is to see the current standings of one of the pre-selected leagues.  
 The user can navigate the site by using the fixed sidebar, to explore the different content.
 
 **2. What we have done:** Much emphasis has been put towards ensuring that the two apis that we are using works as intended and that we can use the data received. To show that they work and test the data, views has been created. One that shows the latest highlights and one which shows the most recent finished matches in Serie A. In addition to this, a home page has been added but the views are still to be updated to include more functionality and data. Routers has also been implemented to allow navigation between the different pages in the application.
@@ -43,12 +43,12 @@ The user can navigate the site by using the fixed sidebar, to explore the differ
 
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and and built using React and Node.js.
 
 ## Available Scripts
 
 In the project directory, you can run:
-
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
