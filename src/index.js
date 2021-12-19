@@ -25,7 +25,6 @@ import persistModel from './Firebase/firebaseModel';
 const fb = new Firebase();
 const footballModel = new FootballModel();
 persistModel(footballModel);
-console.log();
 ReactDOM.render(
   <React.StrictMode>
     <App model = {footballModel} />   

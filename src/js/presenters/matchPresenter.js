@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MatchSource from '../apiSource/matchSource';
 import {MatchesSearch, MatchesSchedule} from "../matchView";
 import { Navigate } from 'react-router-dom'
+import ErrorFetch from '../errorFetchView';
 
 const MatchPresenter = ({ model, }) => {
   const [currentID, setCurrentID] = useState(undefined);
@@ -10,25 +11,36 @@ const MatchPresenter = ({ model, }) => {
   const [teamName, setTeamName] = useState("");
   const [type, setType] = useState("ALL");
   const [teams, setTeam] = useState(null);
+  const [error, setError] = useState(undefined);
 
   useEffect(() => {
     async function getComp() { 
+      try{
       let data = await MatchSource.getMatches(currentID);
       setMatches(data);
       model.setMatches(data);
       setCurrentComp(data);
+      }
+      catch(e){
+      setError(e)
+      }
     }
     
     async function getCrest() {
+      try{
       let data = await MatchSource.getTeamCrests(currentID);
       setTeam(data);
+      }
+      catch(e){
+      console.error("error thrown", e);
+      setError(e)
+      }
     }
-    
     if (currentID) {
       getComp();
       getCrest();
-    }
-  }, [currentID]) 
+      }
+  }, [currentID, model]) 
   
   useEffect(() => {
     setCurrentID(model.currentComp?.id);
@@ -37,6 +49,11 @@ const MatchPresenter = ({ model, }) => {
   if (!model.currentComp) {
     return <Navigate to="/comp-schedules" />
   }
+
+  if (error) {
+    return <Navigate to="/error" />
+  }
+  
 
   return (
     <React.Fragment>

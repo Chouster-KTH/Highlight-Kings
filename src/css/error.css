@@ -1,0 +1,10 @@
+.error {
+  align-items: center;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.error h2 {
+  text-align: center;
+}

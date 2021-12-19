@@ -1,17 +1,13 @@
 const MatchSource =  {
     async compCall(params) {
-        let response = await fetch("https://api.football-data.org/v2/" +params, {
+        const response = await fetch("https://api.football-data.org/v2/" + params, {
             "method": "GET",              // HTTP method
             "headers": {                  // HTTP headers
                 'X-Auth-Token': "108695e7a2ba4fe6982714e3c844c10a"
             }
         })
-        if(response.status !== 200)
-        throw new Error(response.status+" Fetch blocked due to exceding limit")
-        
-        else
+
         return response.json();
-        
     }
     ,
     getAllCompetitions() {
@@ -21,7 +17,7 @@ const MatchSource =  {
     
     getMatches(id){    
     return MatchSource.compCall("/competitions/" +id+ "/matches") 
-    .then(data => data);
+        .then(data => data);
     }
     ,
     getFromDate(id, startDate, endDate){

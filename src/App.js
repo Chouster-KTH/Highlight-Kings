@@ -16,6 +16,7 @@ import LatestHighlightsPresenter from './js/presenters/latestHighlightsPresenter
 import HomePagePresenter from './js/presenters/homePagePresenter';
 import CompStandsPresenter from './js/presenters/competitionStandPresenter';
 import StandingsPresenter from './js/presenters/standingsPresenter';
+import ErrorFetch from './js/errorFetchView';
 
 
 
@@ -56,6 +57,7 @@ function App(props) {
           <Route path="/myAccount" element={<MyAccountPresenter model={props.model} />}> </Route>
           <Route path="/signIn" element={<SignInPresenter model={props.model} />}> </Route>
           <Route path="/signUp" element={<SignUpPresenter model={props.model} />}> </Route>
+          <Route path="/error" element={<ErrorFetch/>}> </Route>
 
 
         </Routes>

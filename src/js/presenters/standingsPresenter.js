@@ -6,11 +6,17 @@ import Standings from '../standingsView';
 const StandingsPresenter = ({ model, }) => {
   const [currentID, setCurrentID] = useState(undefined);
   const [standings, setStandings] = useState(null);
+  const [error, setError] = useState(undefined);
 
   useEffect(() => {
-    async function getStands() { 
+    async function getStands() {
+      try{ 
       let data = await MatchSource.getStandings(currentID);
       setStandings(data);
+      }
+      catch(e){
+      setError(e)
+      }
     }
     if (currentID) {
       getStands();
@@ -23,6 +29,10 @@ const StandingsPresenter = ({ model, }) => {
 
   if (!model.currentComp) {
     return <Navigate to="/comp-standings" />
+  }
+
+  if (error) {
+    return <Navigate to="/error" />
   }
 
   return (

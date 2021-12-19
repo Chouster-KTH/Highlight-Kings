@@ -1,7 +1,12 @@
+
+import PlaceholderImage from '../images/image-not-found.png';
 import '../css/standing.css';
+
 
 const positive = (diff) => {return <div id = "pos">{diff}</div>;}
 const negative = (diff) => {return <div id = "neg">{diff}</div>;}
+
+
 
 function Standings(props){
   let table = props.stands.standings[0].table;
@@ -27,7 +32,7 @@ function Standings(props){
           return [
             <tr id = "tRow" key ={x.team.id}>
               <td>{x.position}</td>
-              <td  width="450"><img id="teams" src ={x.team.crestUrl} alt="'team logo'" height={25}/>{x.team.name}</td>
+              <td  width="450"><img id="teams" src={x.team.crestUrl ?? PlaceholderImage} alt="team logo"  height={25} />{x.team.name}</td>
               <td>{x.playedGames}</td>
               <td>{x.won}</td>
               <td>{x.lost}</td>

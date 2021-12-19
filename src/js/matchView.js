@@ -1,4 +1,5 @@
 import '../css/matches.css';
+import PlaceholderImage from '../images/image-not-found.png';
 
 const setLive = <span id = "live">LIVE</span>;
 const noResult = <div className="matches">No matches could be found for that particular team</div>
@@ -47,12 +48,12 @@ export function MatchesSchedule(props) {
               <td width={150}>{x.utcDate.substring(0,10)}</td>
               <td id ="teamsTable">
                 <span id="leftTeam">
-                {props.teams.teams.filter(y => y.id === x.homeTeam.id).map(y => <img src={y.crestUrl} alt="team logo" height ="50" key={y.id}/>)}
+                {props.teams.teams.filter(y => y.id === x.homeTeam.id).map(y => <img src={y.crestUrl  ?? PlaceholderImage} alt="team logo" height ="50" key={y.id}/>)}
                 {x.homeTeam.name}
                 </span> 
                 <span id="rightTeam">
                 {x.awayTeam.name} 
-                {props.teams.teams.filter(y => y.id === x.awayTeam.id).map(y => <img  src={y.crestUrl} alt="team logo" height ="50" key={y.id}/>)}
+                {props.teams.teams.filter(y => y.id === x.awayTeam.id).map(y => <img  src={y.crestUrl  ?? PlaceholderImage} alt="team logo" height ="50" key={y.id}/>)}
                 </span>
               </td>
               <td width={125}>{x.status === "IN_PLAY" ? setLive : x.status}</td>
