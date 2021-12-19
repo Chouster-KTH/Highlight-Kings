@@ -2,10 +2,13 @@ import '../css/homePage.css'
 import Logo from '../images/logo.png';
 import up from '../images/up.png';
 import neu from '../images/neu.png';
+import { useEffect } from 'react';
 
 function HomePage(props){
-    if(props.model.users[props.model.currentUser - 1] !== undefined)
-        props.setUserUpvoted();
+    useEffect(()=>{
+        if(props.model.users[props.model.currentUser - 1] !== undefined)
+            props.setUserUpvoted();
+        }, []);
     function checkIfUpVoted(hl){
         var found = false;
         if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined){

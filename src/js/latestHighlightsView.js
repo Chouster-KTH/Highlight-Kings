@@ -1,14 +1,17 @@
 import '../css/latestHighlights.css'
 import up from '../images/up.png';
 import neu from '../images/neu.png';
+import { useEffect } from 'react';
 
 
 
 
 
 function LatestHighlights(props) {
-    if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined)
-        props.setUpvoted();
+    useEffect(()=>{
+        if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined)
+          props.setUpvoted();
+    }, []);
     const hlArrayFull = props.highlights.response;
     var hlArray;
     switch(props.pageNr){
