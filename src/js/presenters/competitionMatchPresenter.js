@@ -5,7 +5,7 @@ import { Navigate } from 'react-router-dom'
 
 
 function CompetitionMatchPresenter(props){
-  console.log(props);
+  
   const [comp, setComp] = useState(null);
   const [error, setError] = useState(undefined);
   
