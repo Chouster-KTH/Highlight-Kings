@@ -25,9 +25,12 @@ class FootballModel {
     let matches = this.allMatches.matches.filter(mtch => mtch.homeTeam.name.toLowerCase().includes(caseSense) || mtch.awayTeam.name.toLowerCase().includes(caseSense));
     if (type === "ALL") {
       return matches;
-    } else {
-      matches = matches.filter(mtp => mtp.status === type);
-    }
+    } 
+    else if(type === "LIVE")
+    type = "IN_PLAY"; 
+    
+    matches = matches.filter(mtp => mtp.status === type);
+    
 
     return matches;
   }
