@@ -7,7 +7,6 @@ function persistModel(model){
         if (loadingFromFirebase) {
 			return;
 		}
-        console.log(model.users);
         firebase.database().ref(REF).set({
             upVoted : model.upVoted,
             users: model.users
@@ -17,7 +16,6 @@ function persistModel(model){
     //firebase.database().ref('/').set();
     firebase.database().ref(REF).on("value", function (data) {
         loadingFromFirebase = true;
-		console.log("Retrieving data...");
 		if (data.val()) {
 			model.upVoted = data.val().upVoted || [];
             model.users = data.val().users || [];
