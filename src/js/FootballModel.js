@@ -41,12 +41,12 @@ class FootballModel {
 
   removeObserver(callback) {
     let result = this.observers;
-    result = result.filter(observer => observer != callback);
+    result = result.filter(observer => observer !== callback);
     this.observers = result;
   }
 
   notifyObservers() {
-    if (!(this.observers === undefined || this.observers.length == 0))
+    if (!(this.observers === undefined || this.observers.length === 0))
       this.observers.forEach(cb => {
         try {
           cb()
@@ -282,15 +282,12 @@ class FootballModel {
     if (this.users[this.currentUser - 1].upvoteCount === 0) {
       this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
       this.users[this.currentUser - 1].upvotedGames.pop();
-      console.log("text " + this.users[this.currentUser - 1].upvotedGames.length);
     }
 
     else {
       this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
     }
-    /*this.users[this.currentUser - 1].upvotedGames.unshift(newGame);*/
-    console.log(this.users[this.currentUser - 1].upvotedGames);
-
+   
     this.users[this.currentUser - 1].upvoteCount++;
     return true;
   }
