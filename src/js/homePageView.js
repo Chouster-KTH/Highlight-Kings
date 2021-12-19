@@ -18,7 +18,7 @@ return (
                         <p className="upvoted-header">{highLight.title} {"("+highLight.date.slice(0, 10)+")"}</p>
                         <p className="numberOfUpvotes">
                             <img src={upvote} alt = "up" onClick={() => props.addUpVote(highLight)} width="25" height="25" />  
-                            {"Upvoted: "+ highLight.upVotes +" times"}
+                            {"Upvotes: "+ highLight.upVotes}
                         </p>
                         <div className="iframeContainerUpVoted">
                             <iframe src={highLight.videos[0].embed.substring(90, 185)} frameBorder="0" width="100%" height="100%" allowFullScreen="" allow="autoplay; fullscreen"></iframe>
