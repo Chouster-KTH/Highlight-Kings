@@ -1,8 +1,24 @@
 import '../css/homePage.css'
 import Logo from '../images/logo.png';
 import upvote from '../images/upvote.png';
+import up from '../images/up.png';
+import neu from '../images/neu.png';
 
 function HomePage(props){
+    if(props.model.users[props.model.currentUser - 1] !== undefined)
+        props.setUserUpvoted();
+    function checkIfUpVoted(hl){
+        var found = false;
+        if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined){
+            for(var i = 0; i < props.userUpvoted.length; i++){
+                if(props.userUpvoted[i].title == hl.title){
+                    found = true;
+                    break;
+                }
+            }
+        }
+        return found;
+    }
 return (
     <div className = "homePage">
         <img src = {Logo} alt = "logo"/>
@@ -17,7 +33,7 @@ return (
                     <div className="upvoted" key={index}>
                         <p className="upvoted-header">{highLight.title} {"("+highLight.date.slice(0, 10)+")"}</p>
                         <p className="numberOfUpvotes">
-                            <img src={upvote} alt = "up" onClick={() => props.addUpVote(highLight)} width="25" height="25" />  
+                            <img src={checkIfUpVoted(highLight) ? up : neu} alt = "up" onClick={() => props.addUpVote(highLight)} width="25" height="25" />  
                             {"Upvotes: "+ highLight.upVotes}
                         </p>
                         <div className="iframeContainerUpVoted">
