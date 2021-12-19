@@ -3,15 +3,11 @@ import up from '../images/up.png';
 import neu from '../images/neu.png';
 import { useEffect } from 'react';
 
-
-
-
-
 function LatestHighlights(props) {
     useEffect(()=>{
         if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined)
           props.setUpvoted();
-    }, []);
+    }, [props.model.users]);
     const hlArrayFull = props.highlights.response;
     var hlArray;
     switch(props.pageNr){

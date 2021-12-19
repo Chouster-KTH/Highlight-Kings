@@ -8,7 +8,7 @@ function HomePage(props){
     useEffect(()=>{
         if(props.model.users[props.model.currentUser - 1] !== undefined)
             props.setUserUpvoted();
-        }, []);
+    }, [props.model.users]);
     function checkIfUpVoted(hl){
         var found = false;
         if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined){
