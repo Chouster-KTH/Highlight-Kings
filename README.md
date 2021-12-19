@@ -35,7 +35,7 @@ You will also see any lint errors in the console.
 
 ## Login setup
 
-* Use the sidebar to navigate to the Sign up page by pressing "Sign up for free" at the bottom of the sidebar.
+* Use the Sidebar to navigate to the Sign up page by pressing "Sign up for free" at the bottom of the sidebar.
 
 * Enter an email address for username like example: name@domain.se and the corresponding password you want.
 
