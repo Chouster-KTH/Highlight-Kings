@@ -31,7 +31,7 @@ function LatestHighlights(props) {
         var found = false;
         if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined){
             for(var i = 0; i < props.upvoted.length; i++){
-                if(props.upvoted[i].title == hl.title){
+                if(props.upvoted[i].title === hl.title){
                     found = true;
                     break;
                 }

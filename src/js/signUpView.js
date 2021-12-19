@@ -23,7 +23,7 @@ function SignUp(props) {
                 </div>
                 <body>
                     <input className="signUpButton" type="submit" value="Sign up" onClick={e => props.onSubmit()}></input>
-                </body>          <h2 id="result"></h2>
+                </body>
             </div>
             <div>
                 Already have an account? Sign in <a href="/signIn">here</a>.
