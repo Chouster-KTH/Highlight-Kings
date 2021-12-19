@@ -96,7 +96,6 @@ class FootballModel {
     for (let i = length - 1; i >= 0; i--) {
       currentNum = this.upVoted[i].upVotes;
       current = this.upVoted[i];
-      console.log(currentNum);
       let j = i;
       while ((j < length - 1) && (this.upVoted[j + 1].upVotes > currentNum)) {
         this.upVoted[j] = this.upVoted[j + 1];
