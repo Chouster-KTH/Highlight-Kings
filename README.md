@@ -1,39 +1,7 @@
 # Project DH2642 - Highlight Kings
 ## [Highlight Kings on herokuapp](https://highlightkings.herokuapp.com/)
-**1. Description:** Highlight Kings is a football application which targets football lovers who want an easy and interactive way to enjoy football highlights. The application is simply a web page where users can enjoy football highlights. What makes the application special is that highlights can be upvoted by the users. Users can watch highlights from several countries and leagues and rank them using the up/down-vote. The most upvoted highlights are saved in a leaderboard which the user can watch the highlights from, hence, the users can see if they agree or not with other users. In addition to the leaderboard, one can also choose to watch recent highlights. The website also includes features to list and watch fixtures (whole schedule of games to be played), from pre-selected leagues. With different search options for team and current match status, the user will be able to find a particular match in the current league. Another feature is to see the current standings of one of the pre-selected leagues.  
+Highlight Kings is a football application which targets football lovers who want an easy and interactive way to enjoy football highlights. The application is simply a web page where users can enjoy football highlights. What makes the application special is that highlights can be upvoted by the users. Users can watch highlights from several countries and leagues and rank them using the up/down-vote. The most upvoted highlights are saved in a leaderboard which the user can watch the highlights from, hence, the users can see if they agree or not with other users. In addition to the leaderboard, one can also choose to watch recent highlights. The website also includes features to list and watch fixtures (whole schedule of games to be played), from pre-selected leagues. With different search options for team and current match status, the user will be able to find a particular match in the current league. Another feature is to see the current standings of one of the pre-selected leagues.  
 The user can navigate the site by using the fixed sidebar, to explore the different content.
-
-**2. What we have done:** Much emphasis has been put towards ensuring that the two apis that we are using works as intended and that we can use the data received. To show that they work and test the data, views has been created. One that shows the latest highlights and one which shows the most recent finished matches in Serie A. In addition to this, a home page has been added but the views are still to be updated to include more functionality and data. Routers has also been implemented to allow navigation between the different pages in the application.
-
-**3. What we still plan to do:**
-
-* The upvote/downvote function
-
-* Combine data from both API's, so that a user can find a highlight for a certain match 
-
-* Views that allow the user to search for certain competitions and see live data from matches being played
-
-* The presenters with state hooks
-
-* Some minor features such as "About us" and "Standings" are still not finished 
-
-* Interconnect components to the model
-
-* Add (if time allows) login features to give more user control of the website
-
-* Fix the CSS to make the site more stylish
- 
-**4. Your project file structure (short description/purpose of each file):**
-
-* The home page is supposed to show the most upvoted highlights that have been uploaded
-
-* Sidebarview is a meny that shows all the functions on the website
-
-* The competition page is supposed to sort highlights based on country or tournament
-
-* Latest highlights view is supposed to show the latest highlights regardless of competition
-
-* About us will contain a short description of the project and the contributors
 
 
 ![home](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/home.png)
