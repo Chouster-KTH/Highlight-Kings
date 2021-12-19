@@ -1,6 +1,5 @@
 import '../css/homePage.css'
 import Logo from '../images/logo.png';
-import upvote from '../images/upvote.png';
 import up from '../images/up.png';
 import neu from '../images/neu.png';
 
@@ -11,7 +10,7 @@ function HomePage(props){
         var found = false;
         if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined){
             for(var i = 0; i < props.userUpvoted.length; i++){
-                if(props.userUpvoted[i].title == hl.title){
+                if(props.userUpvoted[i].title === hl.title){
                     found = true;
                     break;
                 }

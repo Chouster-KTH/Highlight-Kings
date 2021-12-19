@@ -1,13 +1,9 @@
 import './App.css';
 import React from 'react';
-import LatestHighlights from './js/latestHighlightsView';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './js/homePageView';
 import SideBar from './js/sidebarView';
 import AboutUs from './js/aboutUsView';
 import CompetitionMatchPresenter from './js/presenters/competitionMatchPresenter';
-//import SignIn from './js/signInView';
-//import SignUp from './js/signUpView';
 import SignInPresenter from './js/presenters/signInPresenter';
 import SignUpPresenter from './js/presenters/signUpPresenter';
 import MyAccountPresenter from './js/presenters/myAccountPresenter';
@@ -18,13 +14,8 @@ import CompStandsPresenter from './js/presenters/competitionStandPresenter';
 import StandingsPresenter from './js/presenters/standingsPresenter';
 import ErrorFetch from './js/errorFetchView';
 
-
-
-
 function App(props) {
-
   const [signInTxt, setSignInTxt] = React.useState('Sign in');
-
 
   React.useEffect(function () {
     function obs() {
@@ -34,12 +25,10 @@ function App(props) {
       else {
         setSignInTxt("Sign out");
       }
-
     }
     props.model.addObserver(obs);
     return function () { props.model.removeObserver(obs); }
   }, [props.model]);
-
 
   return (
     <BrowserRouter>
@@ -58,8 +47,6 @@ function App(props) {
           <Route path="/signIn" element={<SignInPresenter model={props.model} />}> </Route>
           <Route path="/signUp" element={<SignUpPresenter model={props.model} />}> </Route>
           <Route path="/error" element={<ErrorFetch/>}> </Route>
-
-
         </Routes>
       </div>
     </BrowserRouter>
