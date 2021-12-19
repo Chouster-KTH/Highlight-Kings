@@ -41,4 +41,4 @@ You will also see any lint errors in the console.
 
 * Log in using Sign in
 
-* You can now vote on different highlights on both the homepare and Highlights page and see them listed in your My account page
+* You can now vote on different highlights on both the Homepage and Highlights page and see them listed in your My account page
