@@ -61,7 +61,7 @@ You will also see any lint errors in the console.
 
 * Use the Sidebar to navigate to the Sign up page by pressing "Sign up for free" at the bottom of the sidebar.
 
-* Enter an email address as your username like example: name@domain.se and the corresponding password you want.
+* Enter an email address as your username, for example name@domain.se, and the corresponding password you want.
 
 * Log in using Sign in
 
