@@ -20,10 +20,10 @@ function App(props) {
   React.useEffect(function () {
     function obs() {
       if (props.model.currentUser === null) {
-        setSignInTxt("Sign in");
+        setSignInTxt("Sign In");
       }
       else {
-        setSignInTxt("Sign out");
+        setSignInTxt("Sign Out");
       }
     }
     props.model.addObserver(obs);

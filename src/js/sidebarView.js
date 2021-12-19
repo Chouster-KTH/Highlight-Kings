@@ -25,14 +25,14 @@ function SideBar(props) {
 
       <div id="sideTop">
         <Link to="/home">Home</Link>
-        <Link to="/highlights">Highlights</Link>
+        <Link to="/highlights">Latest Highlights</Link>
         <Link to="/comp-fixtures">Fixtures</Link>
         <Link to="/comp-standings">Standings</Link>
       </div>
 
       <div className="sideFooter">
-        <Link to="/aboutUs">About us</Link>
-        <Link to="/myAccount">My account</Link>
+        <Link to="/aboutUs">About Us</Link>
+        <Link to="/myAccount">My Account</Link>
         <Link to="/signIn">{props.signInTxt}</Link>
         <div id="sideText" className = {signOutClass}>
           <Link to="/signUp">Don't have an account? <br /> Sign up for free</Link>
