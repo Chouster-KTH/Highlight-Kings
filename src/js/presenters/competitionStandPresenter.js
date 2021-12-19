@@ -3,7 +3,6 @@ import MatchSource from '../apiSource/matchSource';
 import CompetitionStanding from '../competitionStandingView'
 import { Navigate } from 'react-router-dom'
 
-
 function CompStandsPresenter(props){
   const [comp, setComp] = useState(null);
   const [error, setError] = useState(undefined);
@@ -25,8 +24,6 @@ function CompStandsPresenter(props){
     return <Navigate to="/error" />
   }
   
-  
-
   return (<React.Fragment>
     {comp && <CompetitionStanding
     comps = {comp} 

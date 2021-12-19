@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import HighlightSource from '../apiSource/highlightSource';
 import LatestHighlights from '../latestHighlightsView';
 
-
 function LatestHighlightsPresenter(props){
   const [hLight, setHLight] = useState(null);
   const [upvoted, addUpvoted] = useState([]);

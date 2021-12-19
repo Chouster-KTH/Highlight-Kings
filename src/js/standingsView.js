@@ -2,11 +2,8 @@
 import PlaceholderImage from '../images/image-not-found.png';
 import '../css/standing.css';
 
-
 const positive = (diff) => {return <div id = "pos">{diff}</div>;}
 const negative = (diff) => {return <div id = "neg">{diff}</div>;}
-
-
 
 function Standings(props){
   let table = props.stands.standings[0].table;

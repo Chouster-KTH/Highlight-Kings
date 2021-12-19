@@ -45,7 +45,6 @@ return(<div className ="compStand">
     </tbody>
     </table>
 </div>);
-
 }
 
 export default CompetitionStanding;

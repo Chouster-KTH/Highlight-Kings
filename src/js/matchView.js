@@ -26,7 +26,6 @@ export function MatchesSearch(props) {
   );
 }
 
-
 export function MatchesSchedule(props) {
   if (!props.match.matches.length)
     return noResult;

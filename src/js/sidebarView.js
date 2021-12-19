@@ -2,12 +2,10 @@ import '../css/sidebar.css';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-
 function SideBar(props) {
 
   const [signOutClass, setSignOutClass] = React.useState('');
-
-
+  
   React.useEffect(function () {
     function obs() {
       if (props.model.currentUser === null) {

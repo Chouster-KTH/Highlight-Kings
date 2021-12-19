@@ -3,18 +3,16 @@ import SignIn from "../signInView";
 import { useNavigate } from 'react-router-dom';
 
 function SignInPresenter(props) {
-
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [message, setMessage] = React.useState('');
-
     let text = "";
     let navigate = useNavigate();
+
     if(props.model.currentUser !== null)
     {
         props.model.logOutUser();
     }
-
 
     return (
         <React.Fragment>
@@ -29,12 +27,10 @@ function SignInPresenter(props) {
                         if (text === "")
                             navigate('/myAccount')
                     };
-
                     func(text);
                 }
                 }
             />
-
         </React.Fragment>
     )
 }

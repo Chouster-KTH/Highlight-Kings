@@ -3,14 +3,11 @@ import SignUp from "../signUpView";
 import { useNavigate } from 'react-router-dom';
 
 function SignUpPresenter(props) {
-
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [message, setMessage] = React.useState('');
-
     let text = "";
     let navigate = useNavigate();
-
 
     return (
         <React.Fragment>
@@ -25,12 +22,10 @@ function SignUpPresenter(props) {
                         if (text === "")
                             navigate('/myAccount')
                     };
-
                     func(text);
                 }
                 }
             />
-
         </React.Fragment>
     )
 }

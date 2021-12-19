@@ -53,7 +53,6 @@ const MatchPresenter = ({ model, }) => {
     return <Navigate to="/error" />
   }
   
-
   return (
     <React.Fragment>
       {currentComp && 

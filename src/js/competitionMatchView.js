@@ -9,7 +9,6 @@ return(<div className ="comps">
   <ul>
   <h1>Fixtures - Competitions</h1>
     <div id ="subText">Click on a competition name or image to retrieve info about matches</div>
-  
     {
     compArr.map(function(x){return[
       <div key ={x.id} onClick={e=>{props.chosenComp(x)}}>

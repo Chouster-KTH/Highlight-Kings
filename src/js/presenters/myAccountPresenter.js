@@ -2,9 +2,7 @@ import React from 'react';
 import MyAccount from "../myAccountView";
 
 function MyAccountPresenter(props) {
-
     const [voteCount, setVoteCount] = React.useState(null); 
-
 
     return ( 
         <React.Fragment>
@@ -15,7 +13,6 @@ function MyAccountPresenter(props) {
                     setVoteCount(props.model.users[props.model.currentUser - 1].upvoteCount)
                 }}
             />
-
         </React.Fragment>
     )
 }

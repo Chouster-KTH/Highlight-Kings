@@ -2,7 +2,6 @@ import Logo from '../images/logo.png';
 import '../css/aboutUs.css';
 
 function AboutUs(props) {
-
     return (
         <div className='picture'>
             <div id="pic">

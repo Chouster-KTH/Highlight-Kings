@@ -3,9 +3,7 @@ import '../css/signUp.css';
 
 function SignUp(props) {
 
-
     return (
-
         <div className='a'>
             <div id="p">
                 <img src={Logo} alt="Highlight Kings" />

@@ -1,7 +1,6 @@
 import Logo from '../images/logo.png';
 import '../css/myAccount.css';
 
-
 function MyAccount(props) {
 
     let voteClass = "hidden";
@@ -38,7 +37,6 @@ function MyAccount(props) {
                 tableClass = "styled-table";
             }
         }
-
 
     return (
         <div className='name'>
@@ -81,28 +79,4 @@ function MyAccount(props) {
     )
 }
 
-
 export default MyAccount;
-
-/*
-
-<div className = "game-link"> <td> <a href={opt.url} target="_blank">{opt.title}</a> </td></div>
-
-*/
-
-
-
-
-/*
-
-
- <tr key={key1++} className="active-row">
-                                       <p><b><a href={opt.url} target="_blank">{opt.title}</a></b></p>
-                                        <td> {opt.date.slice(0, 10)} </td>
-                                        <td> <button onClick={e => props.onDeleteClick(opt)}>x</button> </td>
-
-                                    </tr>
-
-
-
-*/

@@ -1,13 +1,6 @@
 import '../css/latestHighlights.css'
-
-import upvote from '../images/upvote.png';
-import downvote from '../images/downvote.png';
 import up from '../images/up.png';
 import neu from '../images/neu.png';
-
-
-
-
 
 function LatestHighlights(props) {
     if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined)
@@ -81,25 +74,4 @@ function LatestHighlights(props) {
     );
 }
 
-
 export default LatestHighlights;
-
-/*
-
-<div className="votingButtons">
-                            <img src={upvoteButton} onClick={event => console.log("User upvoted game: " + highLight.title)} width="25" height="25" />
-                            <img src={downvoteButton} onClick={event => console.log("User downvoted game: " + highLight.title)} width="25" height="25" />
-                        </div>
-
-*/
-
-
-
-/*
-
-<div className="votingButtons">
-                            <div id="upvote"></div><br />
-                            <div id="downvote"></div>
-                        </div>
-
-*/

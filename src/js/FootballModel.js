@@ -1,4 +1,3 @@
-
 class FootballModel {
   constructor(highlights = [], upVoted = [], popular = [], observers = [], currentComp = null, allMatches = null, users = []) {
     this.highlights = highlights;
@@ -12,7 +11,6 @@ class FootballModel {
   }
 
   selectCompetition(comp) {
-
     this.currentComp = comp;
   }
 
@@ -31,7 +29,6 @@ class FootballModel {
     
     matches = matches.filter(mtp => mtp.status === type);
     
-
     return matches;
   }
 
@@ -47,6 +44,7 @@ class FootballModel {
     result = result.filter(observer => observer != callback);
     this.observers = result;
   }
+
   notifyObservers() {
     if (!(this.observers === undefined || this.observers.length == 0))
       this.observers.forEach(cb => {
@@ -60,7 +58,6 @@ class FootballModel {
   }
 
   addUpVote(props) {
-
     //Check that the user is not signed out when voting
     if (this.currentUser === null || this.currentUser === 0) {
       alert("You must sign in to upvote");
@@ -110,7 +107,6 @@ class FootballModel {
   }
 
   deleteUpvote(props) {
-
     let item = this.upVoted.find(item => item.title === props.title);
 
     if (item === undefined) {
@@ -135,7 +131,6 @@ class FootballModel {
 
 
   deleteUpvoteFromUsersArray(props) {
-
     let itemToBeDeleted = this.users[this.currentUser - 1].upvotedGames.find(item => item.title === props.title);
 
     if (itemToBeDeleted === undefined) {
@@ -256,7 +251,6 @@ class FootballModel {
 
   }
 
-
   //Validate that the username is an email address
   emailIsValid(email) {
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -315,8 +309,6 @@ class FootballModel {
     })
     return hasBeenUpvoted;
   }
-
-
 }
 
 export default FootballModel;

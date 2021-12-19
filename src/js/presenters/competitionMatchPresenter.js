@@ -3,9 +3,7 @@ import MatchSource from '../apiSource/matchSource';
 import CompetitionMatches from '../competitionMatchView'
 import { Navigate } from 'react-router-dom'
 
-
 function CompetitionMatchPresenter(props){
-  
   const [comp, setComp] = useState(null);
   const [error, setError] = useState(undefined);
   
@@ -25,7 +23,6 @@ function CompetitionMatchPresenter(props){
     return <Navigate to="/error" />
   }
   
-
   return comp && (
     <CompetitionMatches comps={comp} chosenComp={comp => props.model.selectCompetition(comp)} />
   )
