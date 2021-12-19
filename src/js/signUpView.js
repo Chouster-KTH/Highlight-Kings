@@ -25,6 +25,7 @@ function SignUp(props) {
                     <input className="signUpButton" type="submit" value="Sign up" onClick={e => props.onSubmit()}></input>
                 </body>
             </div>
+            <br/>
             <div>
                 Already have an account? Sign in <a href="/signIn">here</a>.
             </div>
