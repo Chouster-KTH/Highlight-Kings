@@ -49,9 +49,9 @@ function App(props) {
           <Route path="/home" element={<HomePagePresenter model={props.model} />} />
           <Route path="/" element={<HomePagePresenter model={props.model} />} />
           <Route path="/highlights" element={<LatestHighlightsPresenter model={props.model} />} />
-          <Route path="/comp-schedules" element={<CompetitionMatchPresenter model={props.model} />} ></Route>
+          <Route path="/comp-fixtures" element={<CompetitionMatchPresenter model={props.model} />} ></Route>
           <Route path="/comp-standings" element={<CompStandsPresenter model={props.model} />}></Route>
-          <Route path="/comp-schedules/matches" element={<MatchPresenter model={props.model} />}></Route>
+          <Route path="/comp-fixtures/matches" element={<MatchPresenter model={props.model} />}></Route>
           <Route path="/comp-standings/standing" element={<StandingsPresenter model={props.model} />}></Route>
           <Route path="/aboutUs" element={<AboutUs />}> </Route>
           <Route path="/myAccount" element={<MyAccountPresenter model={props.model} />}> </Route>

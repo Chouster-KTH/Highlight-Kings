@@ -7,13 +7,13 @@ function CompetitionMatches(props){
   var compArr = props.comps.competitions.filter((cmp) => ids.includes(cmp.id) );
 return(<div className ="comps">
   <ul>
-  <h1>Scheduled - Competitions</h1>
+  <h1>Fixtures - Competitions</h1>
     <div id ="subText">Click on a competition name or image to retrieve info about matches</div>
   
     {
     compArr.map(function(x){return[
       <div key ={x.id} onClick={e=>{props.chosenComp(x)}}>
-        <Link className = "compLink" to = "/comp-schedules/matches">
+        <Link className = "compLink" to = "/comp-fixtures/matches">
         <img src = {x.area.ensignUrl} alt="Country flag" height = {100}/>
           <li>
           {x.id === 2014 ? "La Liga" : x.name}

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import MatchSource from '../apiSource/matchSource';
 import {MatchesSearch, MatchesSchedule} from "../matchView";
 import { Navigate } from 'react-router-dom'
-import ErrorFetch from '../errorFetchView';
 
 const MatchPresenter = ({ model, }) => {
   const [currentID, setCurrentID] = useState(undefined);
@@ -47,7 +46,7 @@ const MatchPresenter = ({ model, }) => {
   }, [model])
 
   if (!model.currentComp) {
-    return <Navigate to="/comp-schedules" />
+    return <Navigate to="/comp-fixtures" />
   }
 
   if (error) {
