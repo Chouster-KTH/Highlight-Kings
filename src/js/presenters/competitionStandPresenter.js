@@ -8,9 +8,11 @@ function CompStandsPresenter(props){
   const [error, setError] = useState(undefined);
 
   useEffect(() => {
+    let isMounted = true;
     async function getComps() {
       try {
         let data = await MatchSource.getAllCompetitions();
+        if(isMounted)
         setComp(data);
       } catch (e) {
         setError(e)
@@ -18,6 +20,7 @@ function CompStandsPresenter(props){
     }
 
     getComps()
+    return()=>{isMounted = false;}
   }, [])
   
   if (error) {

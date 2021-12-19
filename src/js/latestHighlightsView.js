@@ -2,6 +2,10 @@ import '../css/latestHighlights.css'
 import up from '../images/up.png';
 import neu from '../images/neu.png';
 
+
+
+
+
 function LatestHighlights(props) {
     if(props.model.users[props.model.currentUser - 1] !== null && props.model.users[props.model.currentUser - 1] !== undefined)
         props.setUpvoted();
@@ -22,7 +26,6 @@ function LatestHighlights(props) {
             break;
         default:
             hlArray = hlArrayFull.slice(0,20);
-            console.log("invalid pageNr, rendering 20 latest highlights");
     }
     function checkIfUpVoted(hl){
         var found = false;
@@ -46,7 +49,7 @@ function LatestHighlights(props) {
                     <div className="highlights" key={index}>
                         <p className="highlight-header">{highLight.title}</p>
                         <div className="votingButtons">
-                            <img src={checkIfUpVoted(highLight) ? up : neu} className="upvImg" alt = "up" onClick={() => {props.addUpVote(highLight); console.log(props.upvoted);}}/>
+                            <img src={checkIfUpVoted(highLight) ? up : neu} className="upvImg" alt = "up" onClick={() => {props.addUpVote(highLight); }}/>
                             <i>Upvote</i>
                         </div>
                         <div className="iframeContainer">
@@ -62,16 +65,18 @@ function LatestHighlights(props) {
                     </div>
                 ))}
                 <div className="pageControls">
-                    <button className="pageButton" onClick={e=>{props.pageChange(props.pageNr - 1); console.log(props.pageNr - 1)}}><a href="#top">Back</a></button>
+                    <button className="pageButton" onClick={e=>{props.pageChange(props.pageNr - 1); }}><a href="#top">Back</a></button>
                     <a href="#top" onClick={e=>{props.pageChange(1);}}>1</a>
                     <a href="#top" onClick={e=>{props.pageChange(2);}}>2</a>
                     <a href="#top" onClick={e=>{props.pageChange(3);}}>3</a>
                     <a href="#top" onClick={e=>{props.pageChange(4);}}>4</a>
-                    <button className="pageButton" onClick={e=>{props.pageChange(props.pageNr + 1); console.log(props.pageNr + 1)}}><a href="#top">Next</a></button>
+                    <button className="pageButton" onClick={e=>{props.pageChange(props.pageNr + 1); }}><a href="#top">Next</a></button>
                 </div>
             </div>
         </div>
     );
 }
 
+
 export default LatestHighlights;
+

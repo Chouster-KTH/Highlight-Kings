@@ -41,12 +41,12 @@ class FootballModel {
 
   removeObserver(callback) {
     let result = this.observers;
-    result = result.filter(observer => observer != callback);
+    result = result.filter(observer => observer !== callback);
     this.observers = result;
   }
 
   notifyObservers() {
-    if (!(this.observers === undefined || this.observers.length == 0))
+    if (!(this.observers === undefined || this.observers.length === 0))
       this.observers.forEach(cb => {
         try {
           cb()
@@ -96,7 +96,6 @@ class FootballModel {
     for (let i = length - 1; i >= 0; i--) {
       currentNum = this.upVoted[i].upVotes;
       current = this.upVoted[i];
-      console.log(currentNum);
       let j = i;
       while ((j < length - 1) && (this.upVoted[j + 1].upVotes > currentNum)) {
         this.upVoted[j] = this.upVoted[j + 1];
@@ -152,7 +151,7 @@ class FootballModel {
     if (this.users[this.currentUser - 1].upvotedGames.length === 0) {
       this.users[this.currentUser - 1].upvotedGames = [1];
     }
-    this.notifyObservers(); //Should skip if if not in menu
+    this.notifyObservers(); 
   }
 
 
@@ -282,15 +281,12 @@ class FootballModel {
     if (this.users[this.currentUser - 1].upvoteCount === 0) {
       this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
       this.users[this.currentUser - 1].upvotedGames.pop();
-      console.log("text " + this.users[this.currentUser - 1].upvotedGames.length);
     }
 
     else {
       this.users[this.currentUser - 1].upvotedGames.unshift(newGame);
     }
-    /*this.users[this.currentUser - 1].upvotedGames.unshift(newGame);*/
-    console.log(this.users[this.currentUser - 1].upvotedGames);
-
+   
     this.users[this.currentUser - 1].upvoteCount++;
     return true;
   }

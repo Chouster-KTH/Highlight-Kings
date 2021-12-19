@@ -16,28 +16,19 @@ const MatchSource =  {
     ,
     
     getMatches(id){    
-    return MatchSource.compCall("/competitions/" +id+ "/matches") 
-        .then(data => data);
-    }
-    ,
-    getFromDate(id, startDate, endDate){
-    return MatchSource.compCall(id+"/matches?dateFrom="+startDate+"&dateTo=" +endDate)
-        .then(data => data);
+    return MatchSource.compCall("/competitions/" +id+ "/matches");
     }
     ,
     getFromStatus(id, status){
-        return MatchSource.compCall(id+ "/matches?status=" +status)
-        .then(data => data);
+    return MatchSource.compCall(id+ "/matches?status=" +status);
     }
     ,
     getStandings(id){
-        return MatchSource.compCall("/competitions/" +id+ "/standings")
-        .then(data => data);
+    return MatchSource.compCall("/competitions/" +id+ "/standings");
     }
     ,
     getTeamCrests(id){
-        return MatchSource.compCall("/competitions/"+id+"/teams")
-        .then(data=> data);
+    return MatchSource.compCall("/competitions/"+id+"/teams");
 
     }
     
