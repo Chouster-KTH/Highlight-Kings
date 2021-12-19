@@ -55,34 +55,27 @@ function MyAccount(props) {
             </div>
             <div className="listOfGames">
                 <table className={tableClass}>
-                   
                         <thead>
-                            
                             <tr>
                                 <th>Game</th>
                                 <th>Date played</th><th></th>
-                            </tr></thead> <tbody>
+                            </tr>
+                        </thead>
+                        <tbody>
                         {games.map(
                             function (opt) {
                                 return (
                                     <tr key={key1++} className="active-row">
-                                       <span title = "Upvoted game - link to ScoreBat"> <td> <b><a className = "url-link" href={opt.url} target="_blank">{opt.title}</a></b> </td></span>
+                                       <td><span title = "Upvoted game - link to ScoreBat">  <b><a className = "url-link" href={opt.url} target="_blank">{opt.title}</a></b> </span></td>
                                         <td> {opt.date.slice(0, 10)} </td>
-                                        <span title = "Remove upvote"> <td> <button onClick={e => props.onDeleteClick(opt)}>x</button> </td></span>
-
+                                        <td><span title = "Remove upvote">  <button onClick={e => props.onDeleteClick(opt)}>x</button> </span></td>
                                     </tr>
-
                                 )
                             }
-                        )}</tbody></table></div>
-
-
-
-
-
+                        )}</tbody>
+                </table>
+            </div>
         </div>
-
-
     )
 }
 

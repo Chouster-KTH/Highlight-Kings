@@ -20,9 +20,9 @@ function SignIn(props) {
                     <label htmlFor="pass">Password: </label><br />
                     <input type="password" id="pass" name="password" minLength="8" required onInput={e => props.onPassword(e.target.value)}></input><br /><br />
                 </div>
-                <body>
+                <div>
                     <input className="signInButton" type="submit" value="Sign in" onClick={e => props.onSubmit()}></input>
-                </body>
+                </div>
                 <div><br />
                     Don't have an account? Sign up <a href="/signUp">here</a> for free.
                 </div>
