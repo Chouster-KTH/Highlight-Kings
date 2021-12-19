@@ -11,13 +11,21 @@ The user can navigate the site by using the fixed sidebar, to explore the differ
 ![home](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/homeFinal.png)
 ---
 ![fixtures](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/fixturesFinal.png)
+---
 ![about](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/aboutusFinal.png)
+---
 ![fixturesPLFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/fixturesPLFinal.png)
+---
 ![highlightsFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/highlightsFinal.png)
+---
 ![standingsFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/standingsFinal.png)
+---
 ![standingsPLFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/standingsPLFinal.png)
+---
 ![signinFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/signinFinal.png)
+---
 ![signupFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/signupFinal.png)
+---
 ![myaccountFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/myaccountFinal.png)
 
 # Getting Started with Create React App
