@@ -7,35 +7,7 @@ On "My Account", you can see a list of games that you have upvoted. To delete an
 
 The user can navigate the site by using the fixed sidebar, to explore the different content.
 
-## Home
-![home](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/homeFinal.png)
----
-## Fixtures
-![fixtures](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/fixturesFinal.png)
----
-## About us
-![about](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/aboutusFinal.png)
----
-## Fixtures > Premier League
-![fixturesPLFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/fixturesPLFinal.png)
----
-## Latest Highlights
-![highlightsFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/highlightsFinal.png)
----
-## Standings
-![standingsFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/standingsFinal.png)
----
-## Standings > Premier League
-![standingsPLFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/standingsPLFinal.png)
----
-## Sign up
-![signinFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/signinFinal.png)
----
-## Sign in
-![signupFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/signupFinal.png)
----
-## My account
-![myaccountFinal](https://gits-15.sys.kth.se/vvik/highlightkings/blob/master/src/images/myaccountFinal.png)
+Contributors: Daniel Chouster, Ville Vik, Nima Nayeri and Carl Johan Jonsson.
 
 # Getting Started with Create React App
 
